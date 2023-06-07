@@ -2,8 +2,8 @@ package entidades;
 
 public class Funcionario {
 	
-    // herdar da calsse pessoa
-	// Adicioanr somente os seguintes atributos: cargo, salario, dataContratacao do tipo LocalDate
+    // Falta Herdar da clsse pessoa
+	// Adicionar somente os seguintes atributos: cargo, salario, dataContratacao do tipo LocalDate
 	private String nome;
 	private String CPF;
 	private String email;

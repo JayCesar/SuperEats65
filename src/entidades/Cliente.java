@@ -1,6 +1,6 @@
 package entidades;
 
 public class Cliente {
-	// herdar da calsse pessoa
-	// Adicioanr somente os seguintes atributos:cpf, telefone, dataCadastro
+	// Falta Herdar da clsse pessoa
+	// Adicionar somente os seguintes atributos: cpf, telefone, dataCadastro
 }
