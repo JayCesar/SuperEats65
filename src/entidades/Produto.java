@@ -7,16 +7,14 @@ public class Produto implements ImpostoServico{
 	private String name;
 	private String breveDescricao;
 	private Double preco;
-	private String tipo;
 	
 	public Produto() {}
 
-	public Produto(Integer id, String name, String breveDescricao, Double preco, String tipo) {
+	public Produto(Integer id, String name, String breveDescricao, Double preco) {
 		this.id = id;
 		this.name = name;
 		this.breveDescricao = breveDescricao;
 		this.preco = preco;
-		this.tipo = tipo;
 	}
 
 	public Integer getId() {
@@ -51,24 +49,17 @@ public class Produto implements ImpostoServico{
 		this.preco = preco;
 	}
 
-	public String getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
-	}
-
 	@Override
-	public void imposto(String tipo) {
+	public double imposto(String tipo) {
 		switch(tipo) {
 		case "lanche":
-			this.setPreco(preco + (preco * 0.05));
+			return preco + (preco * 0.05);
 		case "bebida":
-			this.setPreco(preco + (preco * 0.07));
+			return preco + (preco * 0.07);
 		case "sobremesa":
-			this.setPreco(preco + (preco * 0.06));
+			return preco + (preco * 0.06);
 		}
+		return preco;
 	}
 	
 }
