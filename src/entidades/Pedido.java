@@ -13,10 +13,12 @@ public class Pedido {
 	
 	// Relação de associação
 	Queue<ItemPedido> ItensList  = new LinkedList<>();
+	private Cliente cliente;
 
-	public Pedido(LocalDate dataPedido, StatusPedido status) {
+	public Pedido(LocalDate dataPedido, StatusPedido status, Cliente cliente) {
 		this.dataPedido = dataPedido;
 		this.status = status;
+		this.cliente = cliente;
 	}
 
 	public LocalDate getDataPedido() {
@@ -35,8 +37,16 @@ public class Pedido {
 		this.status = status;
 	}
 
-	public Queue<ItemPedido> getItemsPedidos() {
+	public Queue<ItemPedido> getItensList() {
 		return ItensList;
+	}
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
 
 	public void adicionarItem(ItemPedido item) {

@@ -5,17 +5,17 @@ import java.util.Scanner;
 
 public class Cliente extends Pessoa{
 	private String cpf;
-	private Integer telefone;
+	private String telefone;
 	private LocalDate dataCadastro;
 	
 	public Cliente(Integer id, String nome, String email, LocalDate dataDeNascimento, String senha, String cpf,
-			Integer telefone, LocalDate dataCadastro) {
+			String telefone, LocalDate dataCadastro) {
 		super(id, nome, email, dataDeNascimento, senha);
 		this.cpf = cpf;
 		this.telefone = telefone;
 		this.dataCadastro = dataCadastro;
 	}
-
+	
 	public String getCpf() {
 		return cpf;
 	}
@@ -24,11 +24,11 @@ public class Cliente extends Pessoa{
 		this.cpf = cpf;
 	}
 
-	public Integer getTelefone() {
+	public String getTelefone() {
 		return telefone;
 	}
 
-	public void setTelefone(Integer telefone) {
+	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
 
@@ -51,8 +51,5 @@ public class Cliente extends Pessoa{
 			return false;
 		}
 	}
-	
-	
-	
 	
 }
