@@ -15,7 +15,7 @@ public class Produto implements ImpostoServico{
 		this.id = id;
 		this.name = name;
 		this.breveDescricao = breveDescricao;
-		this.preco += this.imposto(tipo);
+		this.preco = preco;
 		this.tipo = tipo;
 	}
 
@@ -60,16 +60,14 @@ public class Produto implements ImpostoServico{
 	}
 
 	@Override
-	public double imposto(String tipo) {
+	public void imposto(String tipo) {
 		switch(tipo) {
 		case "lanche":
-			return preco * 0.05;
+			this.setPreco(preco + (preco * 0.05));
 		case "bebida":
-			return preco * 0.07;
+			this.setPreco(preco + (preco * 0.07));
 		case "sobremesa":
-			return preco * 0.06;
-		default:
-			return 0.0;
+			this.setPreco(preco + (preco * 0.06));
 		}
 	}
 	

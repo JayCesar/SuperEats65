@@ -2,8 +2,8 @@ package services;
 
 public interface ImpostoServico {
 	
-	double imposto(String tipo);
-	
+	void imposto(String tipo);
+
 }
 
 

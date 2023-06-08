@@ -12,7 +12,7 @@ public class Pedido {
 	private StatusPedido status;
 	
 	// Relação de associação
-	Queue<ItemPedido> ItensList  = new LinkedList<>();
+	Queue<ItemPedido> ItensList = new LinkedList<>();
 	private Cliente cliente;
 
 	public Pedido(LocalDate dataPedido, StatusPedido status, Cliente cliente) {
