@@ -8,13 +8,17 @@ public class Cliente extends Pessoa{
 	private String telefone;
 	private LocalDate dataCadastro;
 	
-	public Cliente(Integer id, String nome, String email, LocalDate dataDeNascimento, String senha, String cpf,
+	public Cliente(Integer id, String nome, String email, LocalDate dataDeNascimento, String senha) {
+		super(id, nome, email, dataDeNascimento, senha);
+	}
+	
+	/*public Cliente(Integer id, String nome, String email, LocalDate dataDeNascimento, String senha, String cpf,
 			String telefone, LocalDate dataCadastro) {
 		super(id, nome, email, dataDeNascimento, senha);
 		this.cpf = cpf;
 		this.telefone = telefone;
 		this.dataCadastro = dataCadastro;
-	}
+	}*/
 	
 	public String getCpf() {
 		return cpf;
@@ -52,4 +56,8 @@ public class Cliente extends Pessoa{
 		}
 	}
 	
+	@Override
+	public String toString() {
+		return getNome();
+	}
 }

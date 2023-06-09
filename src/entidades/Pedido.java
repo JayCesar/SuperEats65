@@ -1,31 +1,35 @@
 package entidades;
 
 import java.time.LocalDate;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 import entidades.enums.StatusPedido;
 
 public class Pedido {
 	
-	private LocalDate dataPedido;
+	DateTimeFormatter fmt = DateTimeFormatter.ofPattern("HH:mm:ss");
+	
+	private LocalDateTime dataPedido;
 	private StatusPedido status;
 	
 	// Relação de associação
-	Queue<ItemPedido> ItensList = new LinkedList<>();
+	List<ItemPedido> ItensList = new ArrayList<>();
 	private Cliente cliente;
 
-	public Pedido(LocalDate dataPedido, StatusPedido status, Cliente cliente) {
+	public Pedido(LocalDateTime dataPedido, StatusPedido status, Cliente cliente) {
 		this.dataPedido = dataPedido;
 		this.status = status;
 		this.cliente = cliente;
 	}
 
-	public LocalDate getDataPedido() {
+	public LocalDateTime getDataPedido() {
 		return dataPedido;
 	}
 
-	public void setDataPedido(LocalDate dataPedido) {
+	public void setDataPedido(LocalDateTime dataPedido) {
 		this.dataPedido = dataPedido;
 	}
 
@@ -37,7 +41,7 @@ public class Pedido {
 		this.status = status;
 	}
 
-	public Queue<ItemPedido> getItensList() {
+	public List<ItemPedido> getItensList() {
 		return ItensList;
 	}
 
@@ -64,6 +68,27 @@ public class Pedido {
 		}
 		return sum;
 	}
+
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+			sb.append("\nMomento da pedido: " );
+			sb.append(dataPedido.format(fmt)+ "\n");
+			sb.append("Status do pedido: " );
+			sb.append(status + "\n");
+			sb.append("Cliente: ");
+			sb.append(cliente + "\n");
+			sb.append("Items pedidos: \n" );
+				for (ItemPedido item : ItensList) {
+					sb.append(item + "\n");
+				}
+			sb.append("Total a pagar: ");
+			sb.append("R$" + String.format("%.2f", total()));
+		return sb.toString();
+	}
+	
+	
+	
+	
 	
 }
 

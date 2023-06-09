@@ -3,28 +3,14 @@ package entidades;
 import services.ImpostoServico;
 
 public class Produto implements ImpostoServico{
-	private Integer id;
 	private String name;
-	private String breveDescricao;
 	private Double preco;
-	private String tipo;
 	
 	public Produto() {}
 
-	public Produto(Integer id, String name, String breveDescricao, Double preco, String tipo) {
-		this.id = id;
+	public Produto(String name, Double preco) {
 		this.name = name;
-		this.breveDescricao = breveDescricao;
 		this.preco = preco;
-		this.tipo = tipo;
-	}
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
 	}
 
 	public String getName() {
@@ -35,14 +21,6 @@ public class Produto implements ImpostoServico{
 		this.name = name;
 	}
 
-	public String getBreveDescricao() {
-		return breveDescricao;
-	}
-
-	public void setBreveDescricao(String breveDescricao) {
-		this.breveDescricao = breveDescricao;
-	}
-
 	public Double getPreco() {
 		return preco;
 	}
@@ -51,24 +29,22 @@ public class Produto implements ImpostoServico{
 		this.preco = preco;
 	}
 
-	public String getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
-	}
-
 	@Override
-	public void imposto(String tipo) {
+	public double imposto(String tipo) {
 		switch(tipo) {
 		case "lanche":
-			this.setPreco(preco + (preco * 0.05));
+			return preco + (preco * 0.05);
 		case "bebida":
-			this.setPreco(preco + (preco * 0.07));
+			return preco + (preco * 0.07);
 		case "sobremesa":
-			this.setPreco(preco + (preco * 0.06));
+			return preco + (preco * 0.06);
+		default:
+			return preco;
 		}
 	}
 	
+	@Override
+	public String toString() {
+		return name;
+	}
 }

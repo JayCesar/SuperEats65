@@ -1,80 +1,56 @@
 package entidades;
 
-public class Funcionario {
+import java.time.LocalDate;
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class Funcionario extends Pessoa {
+	private double Salario;
+	private String Cargo;
+	private LocalDate dataDeContratação;
 	
-    // Falta Herdar da clsse pessoa
-	// Adicionar somente os seguintes atributos: cargo, salario, dataContratacao do tipo LocalDate
-	private String nome;
-	private String CPF;
-	private String email;
-	private String pis;
-	private int telefone;
-	private int dataDeNascimento;
-	private int contratacao;
-	private int cracha;
-
-	// getters e setters
-	public String getNome() {
-		return nome;
+	// Acesso a uma fila de pedidos
+	Queue<Pedido> filaPedidos = new LinkedList<>();
+	
+	public Funcionario(Integer id, String nome, String email, LocalDate dataDeNascimento, String senha, double salario,
+			String cargo, LocalDate dataDeContratação) {
+		super(id, nome, email, dataDeNascimento, senha);
+		Salario = salario;
+		Cargo = cargo;
+		this.dataDeContratação = dataDeContratação;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public double getSalario() {
+		return Salario;
 	}
 
-	public String getCPF() {
-		return CPF;
+	public void setSalario(double salario) {
+		Salario = salario;
 	}
 
-	public void setCPF(String CPF) {
-		this.CPF = CPF;
+	public String getCargo() {
+		return Cargo;
 	}
 
-	public String getEmail() {
-		return email;
+	public void setCargo(String cargo) {
+		Cargo = cargo;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public LocalDate getDataDeContratação() {
+		return dataDeContratação;
 	}
 
-	public String getPis() {
-		return pis;
+	public void setDataDeContratação(LocalDate dataDeContratação) {
+		this.dataDeContratação = dataDeContratação;
 	}
 
-	public void setPis(String pis) {
-		this.pis = pis;
+	public void prepararPedido(Pedido pedido) {
+		filaPedidos.add(pedido);
 	}
-
-	public int getTelefone() {
-		return telefone;
-	}
-
-	public void setTelefone(int telefone) {
-		this.telefone = telefone;
-	}
-
-	public int getDataDeNascimento() {
-		return dataDeNascimento;
-	}
-
-	public void setDataDeNascimento(int dataDeNascimento) {
-		this.dataDeNascimento = dataDeNascimento;
-	}
-
-	public int getContratacao() {
-		return contratacao;
-	}
-
-	public void setContratacao(int contratacao) {
-		this.contratacao = contratacao;
-	}
-
-	public int getCracha() {
-		return cracha;
-	}
-
-	public void setCracha(int cracha) {
-		this.cracha = cracha;
+	
+	public void finalizarPedido(Queue<Pedido> filaPedidos) {
+		filaPedidos.clear();
 	}
 }
+
+
