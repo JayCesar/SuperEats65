@@ -71,17 +71,17 @@ public class Pedido {
 
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-			sb.append("\nMomento da pedido: " );
+			sb.append("\n\tMomento da pedido: " );
 			sb.append(dataPedido.format(fmt)+ "\n");
-			sb.append("Status do pedido: " );
+			sb.append("\tStatus do pedido: " );
 			sb.append(status + "\n");
-			sb.append("Cliente: ");
+			sb.append("\tCliente: ");
 			sb.append(cliente + "\n");
-			sb.append("Items pedidos: \n" );
+			sb.append("\tItems pedidos: \n" );
 				for (ItemPedido item : ItensList) {
 					sb.append(item + "\n");
 				}
-			sb.append("Total a pagar: ");
+			sb.append("\tTotal a pagar: ");
 			sb.append("R$" + String.format("%.2f", total()));
 		return sb.toString();
 	}

@@ -22,8 +22,8 @@ public class Cliente extends Pessoa{
 
 	public boolean efetuarPagamento(double totalPedido) {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Por entileza, efetue o pagamento de R$" + String.format("%.2f", totalPedido));
-		System.out.print("Digite o valor exato total a pagar: ");
+		System.out.println("\tPor gentileza, efetue o pagamento de R$" + String.format("%.2f", totalPedido));
+		System.out.print("\tDigite o valor exato total a pagar: ");
 		double pagamento = sc.nextDouble();
 		if (pagamento != totalPedido) {
 			return false;
