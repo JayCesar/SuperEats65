@@ -41,10 +41,17 @@ public class Programa {
 			escolha = mostrarMenu();
 			menuEscolha = validaEscolha(escolha, pedido, pedidos, quantidade, itemPedido, produto);
 		}
-
 		
 		for (Pedido p : pedidos) {
 			System.out.println(p);
+		}
+		
+		System.out.println();
+		
+		validaPagamento(cliente, pedido);
+		
+		for (Pedido p : pedidos) {
+			System.out.println(p.getStatus());
 		}
 
 	}
@@ -61,13 +68,9 @@ public class Programa {
 			produto = new Produto("Hotdog do Júlio", 15.00);
 			itemPedido = new ItemPedido(quantidade, produto, "lanche");
 			pedido.adicionarItem(itemPedido);
-			System.out.println("Adicionar mais itens ao pedido? ");
-			resposta = ler.next().toLowerCase().charAt(0);
-			if (resposta == 'n') {
-				menuEscolha = false;
+			menuEscolha = validaResposta(ler);
+			if(!menuEscolha) {
 				pedidos.add(pedido);
-			}else if(resposta == 's'){
-				menuEscolha = true;
 			}
 			break;
 		case "l2":
@@ -77,13 +80,9 @@ public class Programa {
 			produto = new Produto("Hambúrguer Apolinário", 47.00);
 			itemPedido = new ItemPedido(quantidade, produto, "lanche");
 			pedido.adicionarItem(itemPedido);
-			System.out.println("Adicionar mais itens ao pedido? ");
-			resposta = ler.next().toLowerCase().charAt(0);
-			if (resposta == 'n') {
-				menuEscolha = false;
+			menuEscolha = validaResposta(ler);
+			if(!menuEscolha) {
 				pedidos.add(pedido);
-			}else if(resposta == 's'){
-				menuEscolha = true;
 			}
 			break;
 		case "l3":
@@ -93,13 +92,9 @@ public class Programa {
 			produto = new Produto("Batata frita da Cintia", 14.00);
 			itemPedido = new ItemPedido(quantidade, produto, "lanche");
 			pedido.adicionarItem(itemPedido);
-			System.out.println("Adicionar mais itens ao pedido? ");
-			resposta = ler.next().toLowerCase().charAt(0);
-			if (resposta == 'n') {
-				menuEscolha = false;
+			menuEscolha = validaResposta(ler);
+			if(!menuEscolha) {
 				pedidos.add(pedido);
-			}else if(resposta == 's'){
-				menuEscolha = true;
 			}
 			break;
 		case "b1":
@@ -109,13 +104,9 @@ public class Programa {
 			produto = new Produto("Suco natural", 10.00);
 			itemPedido = new ItemPedido(quantidade, produto, "bebida");
 			pedido.adicionarItem(itemPedido);
-			System.out.println("Adicionar mais itens ao pedido? ");
-			resposta = ler.next().toLowerCase().charAt(0);
-			if (resposta == 'n') {
-				menuEscolha = false;
+			menuEscolha = validaResposta(ler);
+			if(!menuEscolha) {
 				pedidos.add(pedido);
-			}else if(resposta == 's'){
-				menuEscolha = true;
 			}
 			break;
 		case "b2":
@@ -125,13 +116,9 @@ public class Programa {
 			produto = new Produto("Suco natural", 8.00);
 			itemPedido = new ItemPedido(quantidade, produto, "bebida");
 			pedido.adicionarItem(itemPedido);
-			System.out.println("Adicionar mais itens ao pedido? ");
-			resposta = ler.next().toLowerCase().charAt(0);
-			if (resposta == 'n') {
-				menuEscolha = false;
+			menuEscolha = validaResposta(ler);
+			if(!menuEscolha) {
 				pedidos.add(pedido);
-			}else if(resposta == 's'){
-				menuEscolha = true;
 			}
 			break;
 		case "b3":
@@ -141,13 +128,9 @@ public class Programa {
 			produto = new Produto("Água com gás", 6.00);
 			itemPedido = new ItemPedido(quantidade, produto, "bebida");
 			pedido.adicionarItem(itemPedido);
-			System.out.println("Adicionar mais itens ao pedido? ");
-			resposta = ler.next().toLowerCase().charAt(0);
-			if (resposta == 'n') {
-				menuEscolha = false;
+			menuEscolha = validaResposta(ler);
+			if(!menuEscolha) {
 				pedidos.add(pedido);
-			}else if(resposta == 's'){
-				menuEscolha = true;
 			}
 			break;
 		case "b4":
@@ -157,13 +140,9 @@ public class Programa {
 			produto = new Produto("Água sem gás", 4.00);
 			itemPedido = new ItemPedido(quantidade, produto, "bebida");
 			pedido.adicionarItem(itemPedido);
-			System.out.println("Adicionar mais itens ao pedido? ");
-			resposta = ler.next().toLowerCase().charAt(0);
-			if (resposta == 'n') {
-				menuEscolha = false;
+			menuEscolha = validaResposta(ler);
+			if(!menuEscolha) {
 				pedidos.add(pedido);
-			}else if(resposta == 's'){
-				menuEscolha = true;
 			}
 			break;
 		case "s1":
@@ -173,13 +152,9 @@ public class Programa {
 			produto = new Produto("Pudim", 15.00);
 			itemPedido = new ItemPedido(quantidade, produto, "bebida");
 			pedido.adicionarItem(itemPedido);
-			System.out.println("Adicionar mais itens ao pedido? ");
-			resposta = ler.next().toLowerCase().charAt(0);
-			if (resposta == 'n') {
-				menuEscolha = false;
+			menuEscolha = validaResposta(ler);
+			if(!menuEscolha) {
 				pedidos.add(pedido);
-			}else if(resposta == 's'){
-				menuEscolha = true;
 			}
 			break;
 		case "s2":
@@ -189,13 +164,9 @@ public class Programa {
 			produto = new Produto("Pedaço de bolo", 10.00);
 			itemPedido = new ItemPedido(quantidade, produto, "bebida");
 			pedido.adicionarItem(itemPedido);
-			System.out.println("Adicionar mais itens ao pedido? ");
-			resposta = ler.next().toLowerCase().charAt(0);
-			if (resposta == 'n') {
-				menuEscolha = false;
+			menuEscolha = validaResposta(ler);
+			if(!menuEscolha) {
 				pedidos.add(pedido);
-			}else if(resposta == 's'){
-				menuEscolha = true;
 			}
 			break;
 		case "s3":
@@ -205,13 +176,9 @@ public class Programa {
 			produto = new Produto("Sorvete", 20.00);
 			itemPedido = new ItemPedido(quantidade, produto, "bebida");
 			pedido.adicionarItem(itemPedido);
-			System.out.println("Adicionar mais itens ao pedido? ");
-			resposta = ler.next().toLowerCase().charAt(0);
-			if (resposta == 'n') {
-				menuEscolha = false;
+			menuEscolha = validaResposta(ler);
+			if(!menuEscolha) {
 				pedidos.add(pedido);
-			}else if(resposta == 's'){
-				menuEscolha = true;
 			}
 			break;
 		default:
@@ -221,6 +188,19 @@ public class Programa {
 		return menuEscolha;
 	}
 
+	public static boolean validaResposta(Scanner ler) {
+		System.out.println("Adicionar mais itens ao pedido? (n/s): ");
+		char resposta = ler.next().toLowerCase().charAt(0);
+		while(resposta != 'n' && resposta != 's') {
+			System.out.println("Digite 's' para Sim ou 'n' para não: ");
+			resposta = ler.next().toLowerCase().charAt(0);
+		}
+		if (resposta == 'n') {
+			return false;
+		}else {
+			return true;
+		}
+	}
     // Imrime o menu
 	public static String mostrarMenu() {
 		Scanner ler = new Scanner(System.in);
@@ -257,5 +237,16 @@ public class Programa {
 		return ler.nextLine().toLowerCase();
 	}
 
+	public static void validaPagamento(Cliente cliente, Pedido pedido) {
+		boolean pagamento = cliente.efetuarPagamento(pedido.total());
+		while (!pagamento) {
+			System.out.println("\nErro no pagamento:\n");
+			pagamento = cliente.efetuarPagamento(pedido.total());
+			if(pagamento == true) {
+				pedido.setStatus(StatusPedido.valueOf("PAGO"));
+				System.out.println("Pagamento realizado com sucesso!");
+			}
+		}
+	}
 	
 }
