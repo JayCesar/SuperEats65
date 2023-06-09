@@ -6,6 +6,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.LinkedList;
 import java.util.Locale;
 import java.util.Queue;
+import java.util.Random;
 import java.util.Scanner;
 
 import entidades.Cliente;
@@ -18,24 +19,79 @@ public class Programa {
 
 	public static void main(String[] args) {
 		Scanner ler = new Scanner(System.in);
-		Locale.setDefault(Locale.US);
 
 		Queue<Pedido> pedidos = new LinkedList<>();
 
+		String controle = null;
+		
+		controle = menuInicial(ler);
+		
+		while(controle != null) {
+			switch(controle) {
+			case "pedido":
+				System.out.println("\nÉ necessário fazer o cadastro antes do pedido: \n");
+				mostraTelaCliente(controle, pedidos);
+				controle = menuInicial(ler);
+			case "funcionario":
+				System.out.println("Tela do funcionário");
+				controle = null;
+				break;
+			default:
+				controle = null;
+			}
+		}
+		System.out.println("Programa finalizado");
+
+	}
+	
+	public static String menuInicial(Scanner ler) {
+		System.out.println("1 - Fazer pedido:");
+		System.out.println("2 - Entrar como funcionário");
+		System.out.println("3 - Finalizar programa");
+		System.out.print("\nEntre com a opção desejada: ");
+		Integer input = ler.nextInt();
+		while(input != 1 && input != 2 && input != 3) {
+			System.out.print("Digite o número coreto: ");
+			input = ler.nextInt();
+		}
+		if (input == 1) {
+			return "pedido";
+		}else if(input == 2){
+			return "funcionario";
+		}else {
+			return null;
+		}
+	}
+	
+	public static void mostraTelaCliente(String controle, Queue<Pedido> pedidos) {
+		Scanner ler = new Scanner(System.in);
+		Locale.setDefault(Locale.US);
 		DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-		DateTimeFormatter fmt2 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-		
-		// Cadastrou o cliente
-		// Ai vem o fluxo
-		Cliente cliente = new Cliente(2, "Julio", "julio@gmail.com", LocalDate.parse("10/03/2000", fmt), "2222");
-		
-		// Valores vazios
-		String escolha;
+		Random gerador = new Random();
+
+		// Instanciacoes fazias
+		Cliente cliente = new Cliente();
 		Pedido pedido = new Pedido(LocalDateTime.now(), StatusPedido.valueOf("AGUARDANDO_PAGAMENTO"), cliente);
 		int quantidade = 0;
 		Produto produto = new Produto();
 		ItemPedido itemPedido = new ItemPedido();
+	
+		Integer id = gerador.nextInt(60);
+		System.out.print("Digite o seu nome: "); 
+		String nome = ler.nextLine();
+		System.out.print("Digite o seu E-mail: "); 
+		String email = ler.nextLine();
+		System.out.print("Digite sua data nascimento (dd/mm/yyyy): "); 
+		String dataDeNascimento = ler.nextLine();
+		System.out.print("Cria uma senha de pedido: "); 
+		String senha = ler.nextLine(); 
+		System.out.print("Digite seu CPF: "); 
+		String cpf = ler.nextLine(); 
+
+		Cliente cliente00 = new Cliente(id, nome, email, LocalDate.parse(dataDeNascimento, fmt), senha, cpf);
+		   
 		boolean menuEscolha = true;
+		String escolha;
 		
 		while(menuEscolha) {
 			escolha = mostrarMenu();
@@ -47,14 +103,19 @@ public class Programa {
 		}
 		
 		System.out.println();
+	
+		boolean pagamento = cliente.efetuarPagamento(pedido.total());
 		
-		validaPagamento(cliente, pedido);
-		
-		for (Pedido p : pedidos) {
-			System.out.println(p.getStatus());
+		while (pagamento == false) {
+			System.out.println("\nErro no pagamento:\n");
+			pagamento = cliente.efetuarPagamento(pedido.total());
+			if(pagamento == true) {
+				pedido.setStatus(StatusPedido.valueOf("PAGO"));
+				System.out.println("Pagamento realizado com sucesso!\n");
+			}
 		}
-
 	}
+	
 	
 	public static boolean validaEscolha(String escolha, Pedido pedido, Queue<Pedido> pedidos, int quantidade, ItemPedido itemPedido, Produto produto) {
 		Scanner ler = new Scanner(System.in);
@@ -234,19 +295,8 @@ public class Programa {
 		System.out.println("Digite S2 para Pedaço de Bolo");
 		System.out.println("Digite S3 para Sorvete\n");
 		System.out.print("Escolha um: ");
-		return ler.nextLine().toLowerCase();
-	}
-
-	public static void validaPagamento(Cliente cliente, Pedido pedido) {
-		boolean pagamento = cliente.efetuarPagamento(pedido.total());
-		while (!pagamento) {
-			System.out.println("\nErro no pagamento:\n");
-			pagamento = cliente.efetuarPagamento(pedido.total());
-			if(pagamento == true) {
-				pedido.setStatus(StatusPedido.valueOf("PAGO"));
-				System.out.println("Pagamento realizado com sucesso!");
-			}
-		}
+		String resposta = ler.nextLine().toLowerCase();	
+		return resposta;
 	}
 	
 }
