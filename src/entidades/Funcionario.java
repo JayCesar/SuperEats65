@@ -1,6 +1,8 @@
 package entidades;
 
-public class Funcionario {
+import java.time.LocalDate;
+
+public class Funcionario extends Pessoa {
 	
     // Falta Herdar da clsse pessoa
 	// Adicionar somente os seguintes atributos: cargo, salario, dataContratacao do tipo LocalDate
@@ -9,9 +11,22 @@ public class Funcionario {
 	private String email;
 	private String pis;
 	private int telefone;
-	private int dataDeNascimento;
+	private LocalDate dataDeNascimento;
 	private int contratacao;
 	private int cracha;
+	
+	public Funcionario(String nome, String cPF, String email, String pis, int telefone, LocalDate dataDeNascimento,
+			int contratacao, int cracha) {
+		super();
+		this.nome = nome;
+		CPF = cPF;
+		this.email = email;
+		this.pis = pis;
+		this.telefone = telefone;
+		this.dataDeNascimento = dataDeNascimento;
+		this.contratacao = contratacao;
+		this.cracha = cracha;
+	}
 
 	// getters e setters
 	public String getNome() {
@@ -54,11 +69,11 @@ public class Funcionario {
 		this.telefone = telefone;
 	}
 
-	public int getDataDeNascimento() {
+	public LocalDate getDataDeNascimento() {
 		return dataDeNascimento;
 	}
 
-	public void setDataDeNascimento(int dataDeNascimento) {
+	public void setDataDeNascimento(LocalDate dataDeNascimento) {
 		this.dataDeNascimento = dataDeNascimento;
 	}
 
