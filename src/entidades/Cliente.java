@@ -3,6 +3,8 @@ package entidades;
 import java.time.LocalDate;
 import java.util.Scanner;
 
+import entidades.enums.StatusPedido;
+
 public class Cliente extends Pessoa{
 	private String cpf;
 
@@ -20,15 +22,22 @@ public class Cliente extends Pessoa{
 		this.cpf = cpf;
 	}
 
-	public boolean efetuarPagamento(double totalPedido) {
+	public Double efetuarPagamento(double totalPedido) {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("\tPor gentileza, efetue o pagamento de R$" + String.format("%.2f", totalPedido));
 		System.out.print("\tDigite o valor exato total a pagar: ");
 		double pagamento = sc.nextDouble();
-		if (pagamento != totalPedido) {
-			return false;
+		Double troco = null;
+		while (pagamento < totalPedido) {
+			System.out.println("\n\tValor inforior ao total\n");
+			System.out.print("\tDigite o valor exato total a pagar: ");
+			pagamento = sc.nextDouble();
+			troco = (pagamento > totalPedido) ? pagamento - totalPedido : null;
+		}
+		if (troco != null) {
+			return troco;
 		}else {
-			return true;
+		return troco;
 		}
 	}
 	

@@ -27,31 +27,30 @@ public class Programa {
 		controle = menuInicial(ler);
 		
 		while(controle != null) {
-			switch(controle) {
-			case "pedido":
+			if (controle ==  "pedido") {
 				System.out.println("\n\tÉ necessário fazer o cadastro antes do pedido: \n");
 				mostraTelaCliente(controle, pedidos);
-				controle = menuInicial(ler);
-			case "funcionario":
+			}else {
 				System.out.println("Tela do funcionário");
-				controle = null;
-				break;
-			default:
-				controle = null;
+				pedidos.forEach(p -> System.out.println(p + "\n"));
+				System.out.println("Digite: ");
+				controle = ler.nextLine();
 			}
+			controle = menuInicial(ler);
 		}
 		System.out.println("\tPrograma finalizado");
 
 	}
 	
 	public static String menuInicial(Scanner ler) {
+		System.out.println();
 		System.out.println("\t1 - Fazer pedido:");
 		System.out.println("\t2 - Entrar como funcionário");
 		System.out.println("\t3 - Finalizar programa");
 		System.out.print("\n\tEntre com a opção desejada: ");
 		Integer input = ler.nextInt();
 		while(input != 1 && input != 2 && input != 3) {
-			System.out.print("Digite o número corretamente: ");
+			System.out.print("\tDigite o número corretamente: ");
 			input = ler.nextInt();
 		}
 		if (input == 1) {
@@ -81,7 +80,7 @@ public class Programa {
 		String email = ler.nextLine();
 		System.out.print("\tDigite sua data nascimento (dd/mm/yyyy): "); 
 		String dataDeNascimento = ler.nextLine();
-		System.out.print("\tCria uma senha de pedido: "); 
+		System.out.print("\tCrie uma senha de pedido: "); 
 		String senha = ler.nextLine(); 
 		System.out.print("\tDigite seu CPF: "); 
 		String cpf = ler.nextLine(); 
@@ -103,15 +102,12 @@ public class Programa {
 		
 		System.out.println();
 	
-		boolean pagamento = cliente.efetuarPagamento(pedido.total());
+		Double troco = cliente.efetuarPagamento(pedido.total());
 		
-		while (pagamento == false) {
-			System.out.println("\n\tErro no pagamento:\n");
-			pagamento = cliente.efetuarPagamento(pedido.total());
-			if(pagamento == true) {
-				pedido.setStatus(StatusPedido.valueOf("PAGO"));
-				System.out.println("\tPagamento realizado com sucesso!\n");
-			}
+		System.out.println("\tPagamento realizado com sucesso!");
+		pedido.setStatus(StatusPedido.valueOf("PAGO"));
+		if (troco != null) {
+			System.out.println("\tSeu troco: R$" + String.format("%.2f", troco));
 		}
 	}
 	
@@ -123,8 +119,17 @@ public class Programa {
 		switch (escolha) {
 		case "l1":
 			System.out.println("\tItem selecionado: Hotdog do Júlio - R$ 15.00");
-			System.out.print("\tQuantidade? ");
-			quantidade = ler.nextInt();
+			do {
+				System.out.print("\tQuantidade? ");
+			    while (!ler.hasNextInt()) {
+			    	System.out.print("\tOpção inválida, digite apenas número: ");
+			        ler.next();
+			    }
+			    quantidade = ler.nextInt();
+			    if(quantidade <= 0) {
+			    	System.out.println("\tMínimo 1 item");
+			    }
+			} while (quantidade <= 0);
 			produto = new Produto("Hotdog do Júlio", 15.00);
 			itemPedido = new ItemPedido(quantidade, produto, "lanche");
 			pedido.adicionarItem(itemPedido);

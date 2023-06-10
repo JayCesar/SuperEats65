@@ -11,6 +11,21 @@ public class testes {
 	public static void main(String[] args) {
 
 		
+		while(controle != null) {
+			switch(controle) {
+			case "pedido":
+				System.out.println("\n\tÉ necessário fazer o cadastro antes do pedido: \n");
+				mostraTelaCliente(controle, pedidos);
+				controle = menuInicial(ler);
+			case "funcionario":
+				System.out.println("Tela do funcionário");
+				controle = null;
+				break;
+			default:
+				controle = null;
+			}
+		}
+		
 		/*Produto produto1 = new Produto("ProdutoX", 20.0);
 		ItemPedido itemPedido1 = new ItemPedido(2, produto1, "lanche");
 		Pedido pedido1 = new Pedido(LocalDate.now(), StatusPedido.valueOf("AGUARDANDO_PAGAMENTO"), cliente);

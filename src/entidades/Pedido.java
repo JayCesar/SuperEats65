@@ -71,7 +71,7 @@ public class Pedido {
 
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-			sb.append("\n\tMomento da pedido: " );
+			sb.append("\n\tMomento do pedido: " );
 			sb.append(dataPedido.format(fmt)+ "\n");
 			sb.append("\tStatus do pedido: " );
 			sb.append(status + "\n");
