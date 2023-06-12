@@ -60,43 +60,56 @@ public class Programa {
 				break;
 				
 			case "tela-de-pedidos":
-				System.out.println(Cores.TEXT_YELLOW + "\n\tPEDIDOS EM PREPARO: " + Cores.TEXT_RESET);
+				boolean temPedidoPago = false;
+				System.out.println(Cores.TEXT_WHITE_BOLD + Cores.ANSI_CYAN_BACKGROUND + "\n\tPEDIDOS EM PREPARO: " + Cores.TEXT_RESET);
 				for (Pedido p : pedidos) {
 					if (p.getStatus().equals(StatusPedido.valueOf("PAGO"))){
 						System.out.println(p.mostraPedidos());
+						temPedidoPago = true;
 					}
 				}
+				if (temPedidoPago == false) System.out.println(Cores.TEXT_YELLOW + "\n\tNao ha pedidos entregues! " + Cores.TEXT_RESET);
 				
-				System.out.println(Cores.TEXT_YELLOW + "\n\tPEDIDOS EM ENVIO: " + Cores.TEXT_RESET);
+				boolean temPedidoEmEnvio = false;
+				System.out.println(Cores.TEXT_WHITE_BOLD + Cores.ANSI_CYAN_BACKGROUND + "\n\tPEDIDOS EM ENVIO: " + Cores.TEXT_RESET);
 				for (Pedido p : pedidos) {
 					if (p.getStatus().equals(StatusPedido.valueOf("ENVIANDO"))){
 						System.out.println(p);
+						temPedidoEmEnvio = true;
 					}
 				}
+				if (temPedidoEmEnvio == false) System.out.println(Cores.TEXT_YELLOW + "\n\tNao ha pedidos em envio! " + Cores.TEXT_RESET);
+				
+				System.out.print(Cores.TEXT_YELLOW + "\n\tAperte " + Cores.TEXT_RESET + Cores.TEXT_YELLOW_BOLD + "enter " + Cores.TEXT_RESET + Cores.TEXT_YELLOW + "para continuar... " + Cores.TEXT_RESET);
+				ler.nextLine();
 				break;
 				
 			case "entregador":
 				if(pedidos.isEmpty()) {
-					System.out.println("\n\tNão há nenhum pedido para enviar");
+					System.out.println(Cores.TEXT_YELLOW + "\n\tNao ha pedidos para entregar" + Cores.TEXT_RESET);
 				}else {
-					System.out.print("\tDigite seu nome: ");
+					System.out.print(Cores.TEXT_YELLOW + "\tDigite seu nome: " + Cores.TEXT_RESET);
 					String nome = ler.nextLine();
-					System.out.print("\tDigite sua senha: ");
+					System.out.print(Cores.TEXT_YELLOW + "\tDigite sua senha: " + Cores.TEXT_RESET);
 					String senha = ler.nextLine();
 					while(UI.loginEntregador(nome, senha, entregadores) == false) {
-						System.out.println("\tEntregador não encontrado! Digite novamente: ");
-						System.out.print("\tNome:");
+						System.out.println(Cores.TEXT_RED + "\tEntregador nao encontrado! Digite novamente: " + Cores.TEXT_RESET);
+						System.out.print(Cores.TEXT_YELLOW + "\tNome:" + Cores.TEXT_RESET);
 						nome = ler.nextLine();
-						System.out.print("\tSenha: ");
+						System.out.print(Cores.TEXT_YELLOW + "\tSenha: " + Cores.TEXT_RESET);
 						senha = ler.nextLine();
 					}
 					UI.verificaPedidos(nome, entregadores, pedidos, pedidosEmEnvio, pedidosEntregues, empresas);
 				}
+				System.out.print(Cores.TEXT_YELLOW + "\n\tAperte " + Cores.TEXT_RESET + Cores.TEXT_YELLOW_BOLD + "enter " + Cores.TEXT_RESET + Cores.TEXT_YELLOW + "para continuar... " + Cores.TEXT_RESET);
+				ler.nextLine();
 				break;
 			case "empresa":
-				System.out.println("\n\tLanchonete da Gen" + lanchoneteGen);
-				System.out.println("\n\tLanchonete do Yuri" + lanchoneteYuri);
+				System.out.println(Cores.TEXT_WHITE_BOLD + Cores.ANSI_YELLOW_BACKGROUND + "\n\tLanchonete da Gen" + Cores.TEXT_RESET + lanchoneteGen);
+				System.out.println(Cores.TEXT_WHITE_BOLD + Cores.ANSI_YELLOW_BACKGROUND + "\n\tLanchonete do Yuri" + Cores.TEXT_RESET + lanchoneteYuri);
+				System.out.print(Cores.TEXT_YELLOW + "\n\tAperte " + Cores.TEXT_RESET + Cores.TEXT_YELLOW_BOLD + "enter " + Cores.TEXT_RESET + Cores.TEXT_YELLOW + "para continuar... " + Cores.TEXT_RESET);
 				ler.nextLine();
+				break;
 			}
 			
 			controle = UI.menuInicial();	

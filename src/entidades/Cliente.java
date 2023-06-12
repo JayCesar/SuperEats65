@@ -57,13 +57,13 @@ public class Cliente extends Pessoa{
 	
 	public Double efetuarPagamento(double totalPedido) {
 		Scanner ler = new Scanner(System.in);
-		System.out.println("\tPor gentileza, efetue o pagamento de R$" + String.format("%.2f", totalPedido));
-		System.out.print("\tDigite o valor exato total a pagar: ");
+		System.out.println(Cores.TEXT_YELLOW + "\tPor gentileza, efetue o pagamento de R$ " + Cores.TEXT_RESET + Cores.TEXT_CYAN + String.format("%.2f", totalPedido) + Cores.TEXT_RESET);
+		System.out.print(Cores.TEXT_YELLOW  + "\tDigite o valor exato total a pagar: " + Cores.TEXT_RESET);
 		double pagamento = ler.nextDouble();
 		Double troco = null;
 		while (pagamento < totalPedido) {
-			System.out.println("\n\tValor inferior ao total\n");
-			System.out.print("\tDigite o valor exato total a pagar: ");
+			System.out.println(Cores.TEXT_RED + "\n\tValor inferior ao total\n" + Cores.TEXT_RESET);
+			System.out.print(Cores.TEXT_YELLOW  + "\tDigite corretamente o valor do pagamento: " + Cores.TEXT_RESET);
 			pagamento = ler.nextDouble();
 			troco = (pagamento > totalPedido) ? pagamento - totalPedido : null;
 		}

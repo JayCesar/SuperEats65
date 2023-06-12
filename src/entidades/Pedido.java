@@ -90,42 +90,42 @@ public class Pedido {
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		    sb.append("\n\tId do pedido: ");
-		    sb.append(this.getId() + "\n");
-			sb.append("\tMomento do pedido: " );
-			sb.append(dataPedido.format(fmt)+ "\n");
-			sb.append("\tStatus do pedido: " );
-			sb.append(this.getStatus() + "\n");
-			sb.append("\tEmpresa: " );
-			sb.append(this.getEmpresa() + "\n");
-			sb.append("\tPedido: \n");
+		    sb.append(Cores.TEXT_YELLOW + "\n\tId do pedido: " + Cores.TEXT_RESET);
+		    sb.append(Cores.TEXT_CYAN + this.getId() + "\n" + Cores.TEXT_RESET);
+			sb.append(Cores.TEXT_YELLOW + "\tMomento do pedido: " + Cores.TEXT_RESET);
+			sb.append(Cores.TEXT_WHITE + dataPedido.format(fmt) + "\n"+ Cores.TEXT_RESET);
+			sb.append(Cores.TEXT_YELLOW + "\tStatus do pedido: " + Cores.TEXT_RESET);
+			sb.append(Cores.TEXT_WHITE + this.getStatus() + "\n"+ Cores.TEXT_RESET);
+			sb.append(Cores.TEXT_YELLOW + "\tEmpresa: " );
+			sb.append(Cores.TEXT_WHITE + this.getEmpresa() + "\n" + Cores.TEXT_RESET);
+			sb.append(Cores.TEXT_YELLOW + "\tPedido: \n" + Cores.TEXT_RESET);
 				for (ItemPedido item : ItensList) {
 					sb.append(item + "\n");
 				}
-			sb.append("\n\tTotal a pagar: ");
-			sb.append("R$" + String.format("%.2f", total()));
+			sb.append(Cores.TEXT_YELLOW + "\tTotal a pagar: "  + Cores.TEXT_RESET);
+			sb.append(Cores.TEXT_CYAN + "R$" + String.format("%.2f", total()) + Cores.TEXT_RESET);
 		return sb.toString();
 	}
 	
 	public String mostraPedidos() {
 		StringBuilder sb = new StringBuilder();
-		    sb.append("\n\tId do pedido: ");
-		    sb.append(this.getId() + "\n");
-			sb.append("\tMomento do pedido: " );
-			sb.append(dataPedido.format(fmt)+ "\n");
-			sb.append("\tStatus do pedido: " );
-			sb.append(this.getStatus() + "\n");
-			sb.append("\n\tEmpresa: " );
-			sb.append(this.getEmpresa() + "\n");
-			sb.append("\n\tCliente: ");
-			sb.append(this.getCliente().getNome() + "\n");
-			sb.append("\n\tPedido: \n" );
+			sb.append(Cores.TEXT_YELLOW + "\n\tId do pedido: " + Cores.TEXT_RESET);
+		    sb.append(Cores.TEXT_CYAN + this.getId() + "\n" + Cores.TEXT_RESET);
+			sb.append(Cores.TEXT_YELLOW + "\tMomento do pedido: " + Cores.TEXT_RESET);
+			sb.append(Cores.TEXT_WHITE + dataPedido.format(fmt) + "\n"+ Cores.TEXT_RESET);
+			sb.append(Cores.TEXT_YELLOW + "\tStatus do pedido: " + Cores.TEXT_RESET);
+			sb.append(Cores.TEXT_WHITE + this.getStatus() + "\n"+ Cores.TEXT_RESET);
+			sb.append(Cores.TEXT_YELLOW + "\tEmpresa: " );
+			sb.append(Cores.TEXT_WHITE + this.getEmpresa() + "\n" + Cores.TEXT_RESET);
+			sb.append(Cores.TEXT_YELLOW + "\tCliente: " + Cores.TEXT_RESET);
+			sb.append(Cores.TEXT_CYAN + this.getCliente().getNome() + Cores.TEXT_RESET);
+			sb.append(Cores.TEXT_YELLOW + "\tPedido: \n" + Cores.TEXT_RESET);
 				for (ItemPedido item : ItensList) {
 					sb.append(item + "\n");
 				}
-			sb.append("\n\tTotal pago: ");
-			sb.append("R$" + String.format("%.2f", total()));
-			sb.append("\n\n\t***************************************");
+			sb.append(Cores.TEXT_YELLOW + "\tTotal pago: "  + Cores.TEXT_RESET);
+			sb.append(Cores.TEXT_CYAN + "R$" + String.format("%.2f", total()) + Cores.TEXT_RESET);
+			sb.append(Cores.TEXT_CYAN + "\n\n\t*********************************************************\r\n" + Cores.TEXT_RESET);
 		return sb.toString();
 	}
 	

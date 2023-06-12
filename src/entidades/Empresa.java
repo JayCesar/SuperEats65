@@ -75,9 +75,9 @@ public class Empresa {
 	
 	@Override
 	public String toString() {
-		return  "\n\tId: " + id 
-				+ "\n\tSaldo do dia: R$ " + String.format("%.2f", saldo)
-				+ "\n\n\tPedidos entregues: " 
+		return  Cores.TEXT_YELLOW + "\n\tId da empresa: " + Cores.TEXT_RESET + id 
+				+ Cores.TEXT_YELLOW + "\n\tSaldo do dia: " + Cores.TEXT_RESET + "R$ " + String.format("%.2f", saldo)
+				+ Cores.TEXT_YELLOW + "\n\n\tPedidos entregues: " + Cores.TEXT_RESET
 				+ "\n\t" + this.visualizarPedidos();
 	}
 	

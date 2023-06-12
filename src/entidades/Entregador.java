@@ -50,10 +50,11 @@ public class Entregador  {
 	public void comecarEntregaPedido(Integer id, Queue<Pedido> filaPedidos, List<Pedido> pedidosEmEnvio) {
 		Scanner ler = new Scanner(System.in);
 		while(verificaIdPedido(id, filaPedidos) == false) {
-			System.out.print("\tSelecione um ID existente e sem o status enviando: ");
+			System.out.print(Cores.TEXT_YELLOW + "\n\tSelecione um " + Cores.TEXT_RESET + Cores.TEXT_CYAN + "ID existente " + Cores.TEXT_RESET + Cores.TEXT_YELLOW + "e sem o status " + Cores.TEXT_RESET + Cores.TEXT_CYAN + "'Enviando': " + Cores.TEXT_RESET);
 			id = ler.nextInt();
 		}
 		pedidosEmEnvio.add(pedidoEmEntrega);
+		
 	}
 
 	public void entregarPedido(Pedido pedidoEmEntrega, Queue<Pedido> filaPedidos, List<Pedido> pedidosEmEnvio, List<Pedido> pedidosEntregue, List<Empresa> empresas) {

@@ -57,9 +57,9 @@ public class ItemPedido {
 	public String toString() {
 		return "\t" + produto + ", " 
 				+ "R$" + String.format("%.2f", this.getPreco()) 
-				+ ", Quantidade: " 
+				+ Cores.TEXT_YELLOW + ", Quantidade: " + Cores.TEXT_RESET
 				+ quantidade 
-				+ ", Subtotal: " 
+				+ Cores.TEXT_YELLOW + ", Subtotal: " + Cores.TEXT_RESET
 				+ "R$" + String.format("%.2f", subTotal());  
 	}
 	
