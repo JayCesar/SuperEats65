@@ -56,7 +56,7 @@ public class ItemPedido {
 	@Override
 	public String toString() {
 		return "\t" + produto + ", " 
-				+ "$" + String.format("%.2f", this.getPreco()) 
+				+ "R$" + String.format("%.2f", this.getPreco()) 
 				+ ", Quantidade: " 
 				+ quantidade 
 				+ ", Subtotal: " 
