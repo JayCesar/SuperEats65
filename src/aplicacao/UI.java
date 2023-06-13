@@ -3,6 +3,7 @@ package aplicacao;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.Locale;
 import java.util.Queue;
@@ -31,10 +32,12 @@ public class UI {
 		System.out.println("\t*********************************************************");
 		System.out.print("\n\tEntre com a opcao desejada: " + Cores.TEXT_RESET);
 		Integer input = ler.nextInt();
+		
 		while(input != 1 && input != 2 && input != 3 && input != 4 && input != 5) {
 			System.out.print("\tDigite o numero corretamente: ");
 			input = ler.nextInt();
 		}
+		
 		if (input == 1) {
 			return "pedido";
 		}else if(input == 2){
@@ -58,25 +61,39 @@ public class UI {
 		int quantidade = 0;
 		Produto produto = new Produto();
 		ItemPedido itemPedido = new ItemPedido();
+		String nome = "";
+		String email = "";
+		String dataDeNascimento = "";
+		String senha = "";
+		String cpf = "";
+		String bairro = "";
+		String rua = "";
+		String cep = "";
+		String casaNumero = "";
 
+		
 		System.out.print(Cores.TEXT_CYAN + "\tDigite o seu nome: " + Cores.TEXT_RESET);
-		String nome = ler.nextLine();
+		nome = ler.nextLine();
 		System.out.print(Cores.TEXT_CYAN + "\tDigite o seu E-mail: " + Cores.TEXT_RESET);
-		String email = ler.nextLine();
+		email = ler.nextLine();
 		System.out.print(Cores.TEXT_CYAN + "\tDigite sua data nascimento (dd/mm/yyyy): " + Cores.TEXT_RESET);
-		String dataDeNascimento = ler.nextLine();
+		dataDeNascimento = ler.nextLine();
+		while(compilaDataNascimento(dataDeNascimento) == false) {
+			System.out.print(Cores.TEXT_CYAN + "\tDigite sua data nascimento (dd/mm/yyyy): " + Cores.TEXT_RESET);
+			dataDeNascimento = ler.nextLine();
+		}
 		System.out.print(Cores.TEXT_CYAN + "\tCrie uma senha de pedido: " + Cores.TEXT_RESET);
-		String senha = ler.nextLine();
+		senha = ler.nextLine();
 		System.out.print(Cores.TEXT_CYAN + "\tDigite seu CPF: " + Cores.TEXT_RESET);
-		String cpf = ler.nextLine();
+		cpf = ler.nextLine();
 		System.out.print(Cores.TEXT_CYAN + "\tDigite o nome do seu bairro: " + Cores.TEXT_RESET);
-		String bairro = ler.nextLine();
+		bairro = ler.nextLine();
 		System.out.print(Cores.TEXT_CYAN + "\tDigite o nome da sua rua: " + Cores.TEXT_RESET);
-		String rua = ler.nextLine();
+		rua = ler.nextLine();
 		System.out.print(Cores.TEXT_CYAN + "\tDigite seu CEP: " + Cores.TEXT_RESET);
-		String cep = ler.nextLine();
+		cep = ler.nextLine();
 		System.out.print(Cores.TEXT_CYAN + "\tDigite o numero da sua Casa/Apt: " + Cores.TEXT_RESET);
-		String casaNumero = ler.nextLine();
+		casaNumero = ler.nextLine();
 		
 		clearScreen();
 		
@@ -108,14 +125,42 @@ public class UI {
 
 		System.out.println();
 
+		
 		// Pagamento
-		Double troco = cliente.efetuarPagamento(pedido.total());
+		Double totalPedido = pedido.total();
+		Double pagamento = cliente.efetuarPagamento(totalPedido);
 
-		System.out.println(Cores.TEXT_YELLOW + "\n\tPagamento realizado com sucesso!" + Cores.TEXT_RESET);
+		System.out.println(Cores.TEXT_GREEN + "\n\tPagamento realizado com sucesso!" + Cores.TEXT_RESET);
 		pedido.setStatus(StatusPedido.valueOf("PAGO"));
-		if (troco != null) {
-			System.out.println("\tSeu troco: R$" + String.format("%.2f", troco));
+		if (pagamento > totalPedido) {
+			double troco = pagamento - totalPedido;
+			System.out.println(Cores.TEXT_GREEN + "\n\tSeu troco: R$" + String.format("%.2f", troco) + Cores.TEXT_RESET);
 		}
+		
+		
+	}
+	
+	
+	public static boolean compilaDataNascimento(String dataDeNascimento) {
+		boolean compilado = true;
+		try {
+			corrigeDataNascimento(dataDeNascimento);
+		} catch(DateTimeParseException e) {
+			System.out.println(e.getMessage() + dataDeNascimento);
+			compilado = false;
+		}
+		return compilado;
+	}
+	
+	
+	public static void corrigeDataNascimento(String dataDeNascimento) {
+		DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		try {
+			LocalDate.parse(dataDeNascimento, fmt);
+		}catch(DateTimeParseException e) {
+			throw new DateTimeParseException(Cores.TEXT_YELLOW + "\n\tFormato de data de nascimento invalida: " + Cores.TEXT_RESET, dataDeNascimento, 0);
+		}
+		
 	}
 	
 	// Escolhe empresa
@@ -406,6 +451,7 @@ public class UI {
 
 	// Imrime o menu
 	public static String mostrarMenu(String empresa) {
+		clearScreen();
 		Scanner ler = new Scanner(System.in);
 		System.out.println();
 		System.out.println(Cores.TEXT_CYAN + "\t*********************************************************");
@@ -428,7 +474,7 @@ public class UI {
 		String resposta = ler.nextLine().toLowerCase();
 		while(validaOpcaoMenu(resposta) == false) {
 			System.out.println();
-			System.out.print(Cores.TEXT_RED + "\tOpcão invalida! " + Cores.TEXT_RESET + Cores.TEXT_YELLOW + "\n\tPor favor, selecione corretamente um item do menu: "+ Cores.TEXT_RESET);
+			System.out.print(Cores.TEXT_RED + "\tOpcao invalida! " + Cores.TEXT_RESET + Cores.TEXT_YELLOW + "\n\tPor favor, selecione corretamente um item do menu: "+ Cores.TEXT_RESET);
 			resposta = ler.nextLine().toLowerCase();
 		}
 		return resposta;
@@ -446,7 +492,6 @@ public class UI {
 		}
 		return tem;
 	}
-	
 	
 	public static void verificaPedidos(String nome, List<Entregador> entregadores, Queue<Pedido> filapedidos, List<Pedido> pedidosEmEnvio, List<Pedido> pedidosEntregues, List<Empresa> empresas) {
 		Scanner ler = new Scanner(System.in);

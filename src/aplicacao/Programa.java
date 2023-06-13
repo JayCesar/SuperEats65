@@ -1,6 +1,8 @@
 package aplicacao;
 
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
@@ -57,6 +59,8 @@ public class Programa {
 				System.out.println(Cores.TEXT_YELLOW + "\n\tE necessario fazer um breve cadastro antes do pedido: \n" + Cores.TEXT_RESET);
 				UI.mostraTelaCliente(controle, pedidos, id);
 				id += 1;
+				System.out.print(Cores.TEXT_YELLOW + "\n\tAperte " + Cores.TEXT_RESET + Cores.TEXT_YELLOW_BOLD + "enter " + Cores.TEXT_RESET + Cores.TEXT_YELLOW + "para continuar... " + Cores.TEXT_RESET);
+				ler.nextLine();
 				break;
 				
 			case "tela-de-pedidos":
@@ -94,7 +98,7 @@ public class Programa {
 					String senha = ler.nextLine();
 					while(UI.loginEntregador(nome, senha, entregadores) == false) {
 						System.out.println(Cores.TEXT_RED + "\tEntregador nao encontrado! Digite novamente: " + Cores.TEXT_RESET);
-						System.out.print(Cores.TEXT_YELLOW + "\tNome:" + Cores.TEXT_RESET);
+						System.out.print(Cores.TEXT_YELLOW + "\tNome: " + Cores.TEXT_RESET);
 						nome = ler.nextLine();
 						System.out.print(Cores.TEXT_YELLOW + "\tSenha: " + Cores.TEXT_RESET);
 						senha = ler.nextLine();
@@ -105,13 +109,13 @@ public class Programa {
 				ler.nextLine();
 				break;
 			case "empresa":
-				System.out.println(Cores.TEXT_WHITE_BOLD + Cores.ANSI_YELLOW_BACKGROUND + "\n\tLanchonete da Gen" + Cores.TEXT_RESET + lanchoneteGen);
-				System.out.println(Cores.TEXT_WHITE_BOLD + Cores.ANSI_YELLOW_BACKGROUND + "\n\tLanchonete do Yuri" + Cores.TEXT_RESET + lanchoneteYuri);
+				System.out.println(Cores.TEXT_WHITE_BOLD + Cores.ANSI_CYAN_BACKGROUND + "\n\tLanchonete da Gen" + Cores.TEXT_RESET + lanchoneteGen);
+				System.out.println(Cores.TEXT_WHITE_BOLD + Cores.ANSI_CYAN_BACKGROUND + "\n\tLanchonete do Yuri" + Cores.TEXT_RESET + lanchoneteYuri);
 				System.out.print(Cores.TEXT_YELLOW + "\n\tAperte " + Cores.TEXT_RESET + Cores.TEXT_YELLOW_BOLD + "enter " + Cores.TEXT_RESET + Cores.TEXT_YELLOW + "para continuar... " + Cores.TEXT_RESET);
 				ler.nextLine();
 				break;
 			}
-			
+			UI.clearScreen();
 			controle = UI.menuInicial();	
 		}
 		System.out.println("\tPrograma finalizado");

@@ -61,14 +61,14 @@ public class Empresa {
 	public String visualizarPedidos() {
 		StringBuilder sb = new StringBuilder();
 		for (Pedido p : pedidos) {
-			sb.append("\n\tMomento do pedido: " );
+			sb.append(Cores.TEXT_CYAN + "\n\tMomento do pedido: ");
 			sb.append(p.getDataPedido().format(fmt) + "\n");
 			sb.append("\tStatus do pedido: ");
 			sb.append(p.getStatus() + "\n");
 			sb.append("\tCliete: ");
 			sb.append(p.getCliente().getNome() + "\n");
 			sb.append("\tTotal do pedido: ");
-			sb.append("R$: " + String.format("%.2f", p.total()) + "\n");
+			sb.append("R$: " + String.format("%.2f", p.total()) + "\n" + Cores.TEXT_RESET);
 		}
 		return sb.toString();
 	}
