@@ -2,7 +2,7 @@
 ![Desktop - 14](https://github.com/JayCesar/SuperEats65/assets/44206400/3cc28e8d-4b4c-4bed-88f9-07cb7ab87511)
 
 <h1 align="center">
-    <a href="[https://www.java.com/pt-BR/]/">🔗 Projeto feito em Java / Terminal </a>
+    <a href="[https://www.java.com/pt-BR/]/">🔗 Projeto feito em Java </a>
 </h1>
 
 <p align="center">🚀 Aplicativo para pequenas empresas – com taxa inferior ao E-commerce convencionais -direcionado para empresas que estão iniciando seu negócio e/ou que estão situadas em bairros de baixa renda para fácil acesso aos moradores da redondeza de fluxo do comércio local.
