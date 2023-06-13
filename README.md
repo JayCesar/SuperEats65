@@ -23,15 +23,23 @@
 <p align="center">
 <img alt="banner" align="center" src="http://img.shields.io/static/v1?label=STATUS&message=%20FINISHED&color=GREEN&style=for-the-badge" />
 </p>
- 🛠 Tecnologias
+
+***
+
+## Breve descrição
+
+***
+
+## ⚙️ Tecnologias
 
 As seguintes ferramentas foram usadas na construção do projeto:
 
-- [STS](https://spring.io/tools)
-- [Java](https://www.java.com/pt-BR/)
+- **[STS](https://spring.io/tools)** - breve frase;
+- **[Java](https://www.java.com/pt-BR/)** - breve frase
 
+***
 
- Funcionalidades:
+## 💻 Funcionalidades
 
 - [x] Cadastro de Empresa e Login no App
 - [x] Cadastro de Clientes e Login no App
@@ -42,19 +50,32 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [x] Saldo Mensal de Vendas da Empresa (Espelho de Rendimentos)
 - [x] Cadastro de Empresa e Login no App
 
+***
 
+## 📝 UML
 
- Pré-requisitos
+![uml-projeto](https://github.com/JayCesar/SuperEats65/assets/44206400/e25bdd17-a32b-4df3-b3e1-ef79ff312355)
+
+***
+
+## 🎯 Como executar o sistema?
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
 [Git](https://git-scm.com), [Java](https://www.java.com/pt-BR/). 
 Além disto é bom ter um editor para trabalhar com o código como [STS](https://spring.io/tools)
 
+***
 
-🚀 **Colaboradores**
-</br>
+## ▶️ Breve demonstração
+
+Espaço para o gif / video
+
+***
+
+## 💪 Colaboradores
+
 Feito com ❤️ pela Equipe 4 - Generation65 👋🏽 Entre em contato!
-</br>
+
 - [Cinthia de Paula](https://github.com/cinthiadepaula)
 - [Júlio Cesar](https://github.com/JayCesar)
 - [Kamila Ramos](https://github.com/kmikazze)
