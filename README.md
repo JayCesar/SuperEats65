@@ -1,5 +1,5 @@
 
-![Desktop - 14](https://github.com/JayCesar/SuperEats65/assets/44206400/3cc28e8d-4b4c-4bed-88f9-07cb7ab87511)
+![img-gen](https://github.com/JayCesar/SuperEats65/assets/44206400/742be79b-dccf-462d-84ea-8dc0e618ba1f)
 
 <h1 align="center">
     <a href="[https://www.java.com/pt-BR/]/">🔗 Projeto feito em Java </a>
@@ -39,19 +39,15 @@ Impulsionar pequenas empresas alavancando os comércios locais e seus faturament
 
 - **Plano Impulso** – pequenas empresas fidelizadas (após 3 meses) – taxa fixa de 15% + mensalidade de R$100,00 independente do faturamento mensal
 
-Todos os Planos incluem:
-·         Entrega grátis até (5KM de distância)
-·         Divulgação nas plataformas das empresas contratantes – desde que nossos produtos não sejam concorrentes no mercado (Marketplace)
-Modelo de Negócio
-·         Nossa Plataforma (Super65Store) ou (Pop65Eats) – Taxas + assinatura (nos primeiros 3 meses)
-Faturamento do Cliente de R$1.800,00
-Taxas de 5% + R$100,00 (assinatura) – nosso Lucro R$190,00 (1 cliente) – 30 clientes (R$5.700,00)
-Lucro do Cliente – R$1.610,00 (aumento de 20% no faturamento mensal em comparação a concorrente)
-Cliente Fidelizado (após 3 meses) – nosso Lucro R$270,00 + R$100,00(assinatura) = 370,00 (1 cliente) – 30 clientes = R$11.100,00 (mais do que o dobro dos primeiros 3 meses)
-·         Plataforma Concorrente (Ifood) – Taxas + assinatura
-Faturamento do Cliente de R$1.800,00
-Taxas de até 25% + R$130,00 (assinatura) – Lucro Ifood R$ 580,00 (1 cliente) 
+#### Todos os Planos incluem:
+- Entrega grátis até (5KM de distância)
+- Divulgação nas plataformas das empresas contratantes – desde que nossos produtos não sejam concorrentes no mercado (Marketplace)
 
+#### Modelo de Negócio
+- Nossa Plataforma: Taxas + assinatura (nos primeiros 3 meses)
+- Faturamento do Cliente de R$1.800,00
+- Taxas de 5% + R$100,00 (assinatura) – nosso Lucro R$190,00 (1 cliente) – 30 clientes (R$5.700,00)
+- Lucro do Cliente – R$1.610,00 (aumento de 20% no faturamento mensal em comparação a concorrente)
 
 ***
 
@@ -66,8 +62,8 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ### 💻 Funcionalidades
 
-- [x] Cadastro de Empresa e Login no App
-- [x] Cadastro de Clientes e Login no App
+- [x] Cadastro de Empresa e Login no App (próxima versão)
+- [x] Cadastro de Clientes e Login no App (próxima versão)
 - [x] Visualização de Pedidos no Login do Entregador
 - [x] Visualização do Status do Pedido (Em andamento, Saindo para Entrega e Entregue)
 - [x] Cadastro de Produtos e Menu de Visualização do Catálogo
