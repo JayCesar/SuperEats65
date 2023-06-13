@@ -26,21 +26,31 @@
 
 ***
 
-### Descrição do projeto
+### 📙 Regra de Negócio do Sistema
 
-A Plataforma foi direcionada inicialmente para pequenas empresas do ramo alimentício e posteriormente para vários segmentos do comércio.
+A Plataforma é direcionada inicialmente para pequenas empresas do ramo alimentício e posteriormente para vários segmentos do comércio.
 
-- **Objetivo:** 
+**Objetivo:**  
 Impulsionar pequenas empresas alavancando os comércios locais e seus faturamentos – nos bairros da população de baixa renda.
-
-- **Vantagem:**
-quanto que a pessoa ganharia vendendo no Ifood e quanto ganharia no nosso sistema em questão de % de taxa cobrada pelo uso do aplicativo)
 
 ### Tipos de Planos Oferecidos pelo app:
 
 - **Plano Básico** – novas empresas associadas (até 3 meses) – taxa 5% + mensalidade R$100,00 independente do faturamento mensal
 
 - **Plano Impulso** – pequenas empresas fidelizadas (após 3 meses) – taxa fixa de 15% + mensalidade de R$100,00 independente do faturamento mensal
+
+Todos os Planos incluem:
+·         Entrega grátis até (5KM de distância)
+·         Divulgação nas plataformas das empresas contratantes – desde que nossos produtos não sejam concorrentes no mercado (Marketplace)
+Modelo de Negócio
+·         Nossa Plataforma (Super65Store) ou (Pop65Eats) – Taxas + assinatura (nos primeiros 3 meses)
+Faturamento do Cliente de R$1.800,00
+Taxas de 5% + R$100,00 (assinatura) – nosso Lucro R$190,00 (1 cliente) – 30 clientes (R$5.700,00)
+Lucro do Cliente – R$1.610,00 (aumento de 20% no faturamento mensal em comparação a concorrente)
+Cliente Fidelizado (após 3 meses) – nosso Lucro R$270,00 + R$100,00(assinatura) = 370,00 (1 cliente) – 30 clientes = R$11.100,00 (mais do que o dobro dos primeiros 3 meses)
+·         Plataforma Concorrente (Ifood) – Taxas + assinatura
+Faturamento do Cliente de R$1.800,00
+Taxas de até 25% + R$130,00 (assinatura) – Lucro Ifood R$ 580,00 (1 cliente) 
 
 
 ***
