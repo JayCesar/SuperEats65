@@ -9,6 +9,8 @@ public class ItemPedido {
 	// Relação de associação
 	private Produto produto;
 	
+	public ItemPedido() {}
+	
 	public ItemPedido(Integer quantidade, Produto produto, String tipo) {
 		this.quantidade = quantidade;
 		this.preco = produto.imposto(tipo);
@@ -31,18 +33,6 @@ public class ItemPedido {
 		this.preco = preco;
 	}
 
-	public Produto getProduto() {
-		return produto;
-	}
-
-	public void setProduto(Produto produto) {
-		this.produto = produto;
-	}
-	
-	public Double subTotal() {
-		return quantidade * preco;
-	}
-
 	public String getTipo() {
 		return tipo;
 	}
@@ -50,6 +40,29 @@ public class ItemPedido {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
+
+	public Produto getProduto() {
+		return produto;
+	}
+
+	public void setProduto(Produto produto) {
+		this.produto = produto;
+	}
+
+	public Double subTotal() {
+		return quantidade * preco;
+	}
+
+	@Override
+	public String toString() {
+		return "\t" + produto + ", " 
+				+ "R$" + String.format("%.2f", this.getPreco()) 
+				+ Cores.TEXT_YELLOW + ", Quantidade: " + Cores.TEXT_RESET
+				+ quantidade 
+				+ Cores.TEXT_YELLOW + ", Subtotal: " + Cores.TEXT_RESET
+				+ "R$" + String.format("%.2f", subTotal());  
+	}
+	
 	
 	
 }

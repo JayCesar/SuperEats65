@@ -2,8 +2,7 @@ package entidades.enums;
 
 public enum StatusPedido {
 	AGUARDANDO_PAGAMENTO,
-	PROCESSANDO,
-	PRONTO,
+	PAGO,
+	ENVIANDO,
 	ENTREGUE,
-	CANCELADO;
 }

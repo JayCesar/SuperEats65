@@ -3,26 +3,14 @@ package entidades;
 import services.ImpostoServico;
 
 public class Produto implements ImpostoServico{
-	private Integer id;
 	private String name;
-	private String breveDescricao;
 	private Double preco;
 	
 	public Produto() {}
 
-	public Produto(Integer id, String name, String breveDescricao, Double preco) {
-		this.id = id;
+	public Produto(String name, Double preco) {
 		this.name = name;
-		this.breveDescricao = breveDescricao;
 		this.preco = preco;
-	}
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
 	}
 
 	public String getName() {
@@ -31,14 +19,6 @@ public class Produto implements ImpostoServico{
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getBreveDescricao() {
-		return breveDescricao;
-	}
-
-	public void setBreveDescricao(String breveDescricao) {
-		this.breveDescricao = breveDescricao;
 	}
 
 	public Double getPreco() {
@@ -58,8 +38,13 @@ public class Produto implements ImpostoServico{
 			return preco + (preco * 0.07);
 		case "sobremesa":
 			return preco + (preco * 0.06);
+		default:
+			return preco;
 		}
-		return preco;
 	}
 	
+	@Override
+	public String toString() {
+		return Cores.TEXT_YELLOW + "Item: " + Cores.TEXT_RESET + Cores.TEXT_WHITE + name + Cores.TEXT_RESET;
+	}
 }
