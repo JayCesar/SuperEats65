@@ -83,7 +83,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 1) Dê um fork nesse repositório e se você puder nos dê uma estrelinha! ⭐
 
-  ![image](https://github.com/JayCesar/SuperEats65/assets/44206400/02d6c829-a355-4978-91e5-3af754117327)
+![image](https://github.com/JayCesar/SuperEats65/assets/44206400/02d6c829-a355-4978-91e5-3af754117327)
 
 Certifique de que você já tenha instalado em sua máquina as seguintes ferramentas:
 - [x] Linguagem para executar o sistema: **[Java](https://www.java.com/pt-BR/)**
