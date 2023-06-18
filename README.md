@@ -30,10 +30,10 @@
 
 A Plataforma é direcionada inicialmente para pequenas empresas do ramo alimentício e posteriormente para vários segmentos do comércio.
 
-**Objetivo:**  
+#### Objetivo:
 Impulsionar pequenas empresas alavancando os comércios locais e seus faturamentos – nos bairros da população de baixa renda.
 
-### Tipos de Planos Oferecidos pelo app:
+#### Tipos de Planos Oferecidos pelo app:
 
 - **Plano Básico** – novas empresas associadas (até 3 meses) – taxa 5% + mensalidade R$100,00 independente do faturamento mensal
 
@@ -55,21 +55,21 @@ Impulsionar pequenas empresas alavancando os comércios locais e seus faturament
 
 As seguintes ferramentas foram usadas na construção do projeto:
 
-- **[STS](https://spring.io/tools)** - breve frase;
-- **[Java](https://www.java.com/pt-BR/)** - breve frase
+- **[STS](https://spring.io/tools)** - IDE baseada em Eclipse que dá algumas facilidades para trabalhos com o Spring no geral;
+- **[Java](https://www.java.com/pt-BR/)** - Linguagem de programação e plataforma de computação;
 
 ***
 
 ### 💻 Funcionalidades
 
-- [x] Cadastro de Empresa e Login no App (próxima versão)
-- [x] Cadastro de Clientes e Login no App (próxima versão)
-- [x] Visualização de Pedidos no Login do Entregador
-- [x] Visualização do Status do Pedido (Em andamento, Saindo para Entrega e Entregue)
-- [x] Cadastro de Produtos e Menu de Visualização do Catálogo
-- [x] Listar, Pagar e Entregar Pedidos
-- [x] Saldo Mensal de Vendas da Empresa (Espelho de Rendimentos)
-- [x] Cadastro de Empresa e Login no App
+- [x] Cadastro de Empresa e Login no App (próxima versão);
+- [x] Cadastro de Clientes e Login no App (próxima versão);
+- [x] Visualização de Pedidos no Login do Entregador;
+- [x] Visualização do Status do Pedido (Em andamento, Saindo para Entrega e Entregue);
+- [x] Cadastro de Produtos e Menu de Visualização do Catálogo;
+- [x] Listar, Pagar e Entregar Pedidos;
+- [x] Saldo Mensal de Vendas da Empresa (Espelho de Rendimentos);
+- [x] Cadastro de Empresa e Login no App+
 
 ***
 
@@ -81,14 +81,19 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ### 🎯 Como executar o sistema?
 
-Dê um fork nesse repositório e se você puder nos dê uma estrelinha! ⭐
+1) Dê um fork nesse repositório e se você puder nos dê uma estrelinha! ⭐
 
   ![image](https://github.com/JayCesar/SuperEats65/assets/44206400/02d6c829-a355-4978-91e5-3af754117327)
 
 Certifique de que você já tenha instalado em sua máquina as seguintes ferramentas:
 - [x] Linguagem para executar o sistema: **[Java](https://www.java.com/pt-BR/)**
-- [x] Sistema para controle de versões: **[Git](https://git-scm.com)**
-- [x] IDE (Ambiente de desenvilvimento) para edição: **[STS](https://spring.io/tools)**
+- [x] Sistema para controle de versões e execução do programa: **[Git](https://git-scm.com)**
+- [x] IDE (Ambiente de desenvolvimento) para edição: **[STS](https://spring.io/tools)**
+
+2) Após baixar este repositório, acesse pasta 'src' e execute o seguinte comando:
+```java
+java aplicacao/Programa
+```
 
 ***
 
