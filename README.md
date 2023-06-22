@@ -106,13 +106,13 @@ As seguintes ferramentas foram usadas na construção do projeto:
    4.1) Importar o projeto;
    <div align="left"><img src="https://github.com/JayCesar/SuperEats65/assets/44206400/d5902c8d-6be2-4186-b8a2-007d28a862da" title="source: imgur.com" /></div>
    
-   4.2) Escolha a opção de projeto existe:
+   4.2) Escolha a opção de projeto existente:
    <div align="left"><img src="https://github.com/JayCesar/SuperEats65/assets/44206400/a55066a6-3e98-42c5-9fb8-304425cf3fd5" title="source: imgur.com" /></div>  
    
    4.4) Selecione a pasta do projeto;
    <div align="left"><img src="https://github.com/JayCesar/SuperEats65/assets/44206400/0b7ceeb4-7942-4abd-a62e-856b1eaede75" title="source: imgur.com" /></div>  
    
-   4.4) Executar o programa;
+   4.4) Execute o programa;
    <div align="left"><img src="https://github.com/JayCesar/SuperEats65/assets/44206400/7d9efe75-6510-4e30-9382-9c8c1b0b3f2d" title="source: imgur.com" /></div>  
 	
 ***
