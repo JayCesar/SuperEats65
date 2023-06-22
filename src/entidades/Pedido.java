@@ -92,17 +92,17 @@ public class Pedido {
 		StringBuilder sb = new StringBuilder();
 		    sb.append(Cores.TEXT_YELLOW + "\n\tId do pedido: " + Cores.TEXT_RESET);
 		    sb.append(Cores.TEXT_CYAN + this.getId() + "\n" + Cores.TEXT_RESET);
-			sb.append(Cores.TEXT_YELLOW + "\tMomento do pedido: " + Cores.TEXT_RESET);
+			sb.append(Cores.TEXT_YELLOW + "\t\tMomento do pedido: " + Cores.TEXT_RESET);
 			sb.append(Cores.TEXT_WHITE + dataPedido.format(fmt) + "\n"+ Cores.TEXT_RESET);
-			sb.append(Cores.TEXT_YELLOW + "\tStatus do pedido: " + Cores.TEXT_RESET);
+			sb.append(Cores.TEXT_YELLOW + "\t\tStatus do pedido: " + Cores.TEXT_RESET);
 			sb.append(Cores.TEXT_WHITE + this.getStatus() + "\n"+ Cores.TEXT_RESET);
-			sb.append(Cores.TEXT_YELLOW + "\tEmpresa: " );
+			sb.append(Cores.TEXT_YELLOW + "\t\tEmpresa: " );
 			sb.append(Cores.TEXT_WHITE + this.getEmpresa() + "\n" + Cores.TEXT_RESET);
-			sb.append(Cores.TEXT_YELLOW + "\tPedido: \n" + Cores.TEXT_RESET);
+			sb.append(Cores.TEXT_YELLOW + "\t\tPedido: \n" + Cores.TEXT_RESET);
 				for (ItemPedido item : ItensList) {
 					sb.append(item + "\n");
 				}
-			sb.append(Cores.TEXT_YELLOW + "\tTotal a pagar: "  + Cores.TEXT_RESET);
+			sb.append(Cores.TEXT_YELLOW + "\t\tTotal a pagar: "  + Cores.TEXT_RESET);
 			sb.append(Cores.TEXT_CYAN + "R$" + String.format("%.2f", total()) + Cores.TEXT_RESET);
 		return sb.toString();
 	}
@@ -111,19 +111,19 @@ public class Pedido {
 		StringBuilder sb = new StringBuilder();
 			sb.append(Cores.TEXT_YELLOW + "\n\tId do pedido: " + Cores.TEXT_RESET);
 		    sb.append(Cores.TEXT_CYAN + this.getId() + "\n" + Cores.TEXT_RESET);
-			sb.append(Cores.TEXT_YELLOW + "\tMomento do pedido: " + Cores.TEXT_RESET);
+			sb.append(Cores.TEXT_YELLOW + "\t\tMomento do pedido: " + Cores.TEXT_RESET);
 			sb.append(Cores.TEXT_WHITE + dataPedido.format(fmt) + "\n"+ Cores.TEXT_RESET);
-			sb.append(Cores.TEXT_YELLOW + "\tStatus do pedido: " + Cores.TEXT_RESET);
+			sb.append(Cores.TEXT_YELLOW + "\t\tStatus do pedido: " + Cores.TEXT_RESET);
 			sb.append(Cores.TEXT_WHITE + this.getStatus() + "\n"+ Cores.TEXT_RESET);
-			sb.append(Cores.TEXT_YELLOW + "\tEmpresa: " );
+			sb.append(Cores.TEXT_YELLOW + "\t\tEmpresa: " );
 			sb.append(Cores.TEXT_WHITE + this.getEmpresa() + "\n" + Cores.TEXT_RESET);
-			sb.append(Cores.TEXT_YELLOW + "\tCliente: " + Cores.TEXT_RESET);
+			sb.append(Cores.TEXT_YELLOW + "\t\tCliente: " + Cores.TEXT_RESET);
 			sb.append(Cores.TEXT_CYAN + this.getCliente().getNome() + Cores.TEXT_RESET);
-			sb.append(Cores.TEXT_YELLOW + "\tPedido: \n" + Cores.TEXT_RESET);
+			sb.append(Cores.TEXT_YELLOW + "\t\tPedido: \n" + Cores.TEXT_RESET);
 				for (ItemPedido item : ItensList) {
 					sb.append(item + "\n");
 				}
-			sb.append(Cores.TEXT_YELLOW + "\tTotal pago: "  + Cores.TEXT_RESET);
+			sb.append(Cores.TEXT_YELLOW + "\t\tTotal pago: "  + Cores.TEXT_RESET);
 			sb.append(Cores.TEXT_CYAN + "R$" + String.format("%.2f", total()) + Cores.TEXT_RESET);
 			sb.append(Cores.TEXT_CYAN + "\n\n\t*********************************************************\r\n" + Cores.TEXT_RESET);
 		return sb.toString();

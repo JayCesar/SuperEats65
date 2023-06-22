@@ -45,6 +45,6 @@ public class Produto implements ImpostoServico{
 	
 	@Override
 	public String toString() {
-		return Cores.TEXT_YELLOW + "Item: " + Cores.TEXT_RESET + Cores.TEXT_WHITE + name + Cores.TEXT_RESET;
+		return Cores.TEXT_YELLOW + "\t\tItem: " + Cores.TEXT_RESET + Cores.TEXT_WHITE + name + Cores.TEXT_RESET;
 	}
 }

@@ -23,7 +23,7 @@ public class UI {
 	public static String menuInicial() {
 		Scanner ler = new Scanner(System.in);
 		System.out.println();
-		System.out.println(Cores.TEXT_CYAN + "\t*********************************************************");
+		System.out.println(Cores.TEXT_CYAN + "\t       *********************************************************");
 		System.out.println("\t\t\t1 - Fazer pedido");
 		System.out.println("\t\t\t2 - Acessar tela de pedidos");
 		System.out.println("\t\t\t3 - Acessar como empresa");
@@ -72,27 +72,27 @@ public class UI {
 		String casaNumero = "";
 
 		
-		System.out.print(Cores.TEXT_CYAN + "\tDigite o seu nome: " + Cores.TEXT_RESET);
+		System.out.print(Cores.TEXT_CYAN + "\t\tDigite o seu nome: " + Cores.TEXT_RESET);
 		nome = ler.nextLine();
-		System.out.print(Cores.TEXT_CYAN + "\tDigite o seu E-mail: " + Cores.TEXT_RESET);
+		System.out.print(Cores.TEXT_CYAN + "\t\tDigite o seu E-mail: " + Cores.TEXT_RESET);
 		email = ler.nextLine();
-		System.out.print(Cores.TEXT_CYAN + "\tDigite sua data nascimento (dd/mm/yyyy): " + Cores.TEXT_RESET);
+		System.out.print(Cores.TEXT_CYAN + "\t\tDigite sua data nascimento (dd/mm/yyyy): " + Cores.TEXT_RESET);
 		dataDeNascimento = ler.nextLine();
 		while(compilaDataNascimento(dataDeNascimento) == false) {
-			System.out.print(Cores.TEXT_CYAN + "\tDigite sua data nascimento (dd/mm/yyyy): " + Cores.TEXT_RESET);
+			System.out.print(Cores.TEXT_CYAN + "\t\tDigite sua data nascimento (dd/mm/yyyy): " + Cores.TEXT_RESET);
 			dataDeNascimento = ler.nextLine();
 		}
-		System.out.print(Cores.TEXT_CYAN + "\tCrie uma senha de pedido: " + Cores.TEXT_RESET);
+		System.out.print(Cores.TEXT_CYAN + "\t\tCrie uma senha de pedido: " + Cores.TEXT_RESET);
 		senha = ler.nextLine();
-		System.out.print(Cores.TEXT_CYAN + "\tDigite seu CPF: " + Cores.TEXT_RESET);
+		System.out.print(Cores.TEXT_CYAN + "\t\tDigite seu CPF: " + Cores.TEXT_RESET);
 		cpf = ler.nextLine();
-		System.out.print(Cores.TEXT_CYAN + "\tDigite o nome do seu bairro: " + Cores.TEXT_RESET);
+		System.out.print(Cores.TEXT_CYAN + "\t\tDigite o nome do seu bairro: " + Cores.TEXT_RESET);
 		bairro = ler.nextLine();
-		System.out.print(Cores.TEXT_CYAN + "\tDigite o nome da sua rua: " + Cores.TEXT_RESET);
+		System.out.print(Cores.TEXT_CYAN + "\t\tDigite o nome da sua rua: " + Cores.TEXT_RESET);
 		rua = ler.nextLine();
-		System.out.print(Cores.TEXT_CYAN + "\tDigite seu CEP: " + Cores.TEXT_RESET);
+		System.out.print(Cores.TEXT_CYAN + "\t\tDigite seu CEP: " + Cores.TEXT_RESET);
 		cep = ler.nextLine();
-		System.out.print(Cores.TEXT_CYAN + "\tDigite o numero da sua Casa/Apt: " + Cores.TEXT_RESET);
+		System.out.print(Cores.TEXT_CYAN + "\t\tDigite o numero da sua Casa/Apt: " + Cores.TEXT_RESET);
 		casaNumero = ler.nextLine();
 		
 		clearScreen();
@@ -195,16 +195,16 @@ public class UI {
 		char resposta;
 		switch (escolha) {
 		case "l1":
-			System.out.println(Cores.TEXT_YELLOW + "\tItem selecionado: " + Cores.TEXT_RESET + Cores.TEXT_CYAN + "Hotdog do Julio - R$ 15.00" + Cores.TEXT_RESET);
+			System.out.println(Cores.TEXT_YELLOW + "\t\tItem selecionado: " + Cores.TEXT_RESET + Cores.TEXT_CYAN + "Hotdog do Julio - R$ 15.00" + Cores.TEXT_RESET);
 			do {
-				System.out.print(Cores.TEXT_YELLOW + "\tQuantidade? " + Cores.TEXT_RESET);
+				System.out.print(Cores.TEXT_YELLOW + "\t\tQuantidade? " + Cores.TEXT_RESET);
 				while (!ler.hasNextInt()) {
-					System.out.print(Cores.TEXT_RED + "\tOpcao invalida, digite apenas numero: " + Cores.TEXT_RESET);
+					System.out.print(Cores.TEXT_RED + "\t\tOpcao invalida, digite apenas numero: " + Cores.TEXT_RESET);
 					ler.next();
 				}
 				quantidade = ler.nextInt();
 				if (quantidade <= 0) {
-					System.out.println(Cores.TEXT_RED + "\tMinimo 1 item" + Cores.TEXT_RESET);
+					System.out.println(Cores.TEXT_RED + "\t\tMinimo 1 item" + Cores.TEXT_RESET);
 				}
 			} while (quantidade <= 0);
 			produto = new Produto("Hotdog do Julio", 15.00);
@@ -216,16 +216,16 @@ public class UI {
 			}
 			break;
 		case "l2":
-			System.out.println(Cores.TEXT_YELLOW + "\tItem selecionado: " + Cores.TEXT_RESET + Cores.TEXT_CYAN + "Hamburguer do Apolinario - R$ 47.00" + Cores.TEXT_RESET);
+			System.out.println(Cores.TEXT_YELLOW + "\t\tItem selecionado: " + Cores.TEXT_RESET + Cores.TEXT_CYAN + "Hamburguer do Apolinario - R$ 47.00" + Cores.TEXT_RESET);
 			do {
-				System.out.print(Cores.TEXT_YELLOW + "\tQuantidade? " + Cores.TEXT_RESET);
+				System.out.print(Cores.TEXT_YELLOW + "\t\tQuantidade? " + Cores.TEXT_RESET);
 				while (!ler.hasNextInt()) {
-					System.out.print(Cores.TEXT_RED + "\tOpcao invalida, digite apenas numero: " + Cores.TEXT_RESET);
+					System.out.print(Cores.TEXT_RED + "\t\tOpcao invalida, digite apenas numero: " + Cores.TEXT_RESET);
 					ler.next();
 				}
 				quantidade = ler.nextInt();
 				if (quantidade <= 0) {
-					System.out.println(Cores.TEXT_RED + "\tMinimo 1 item" + Cores.TEXT_RESET);
+					System.out.println(Cores.TEXT_RED + "\t\tMinimo 1 item" + Cores.TEXT_RESET);
 				}
 			} while (quantidade <= 0);
 			produto = new Produto("Hamburguer Apolinario", 47.00);
@@ -237,16 +237,16 @@ public class UI {
 			}
 			break;
 		case "l3":
-			System.out.println(Cores.TEXT_YELLOW + "\tItem selecionado: " + Cores.TEXT_RESET + Cores.TEXT_CYAN + "Batata frita da cintia - R$ 14.00" + Cores.TEXT_RESET);
+			System.out.println(Cores.TEXT_YELLOW + "\t\tItem selecionado: " + Cores.TEXT_RESET + Cores.TEXT_CYAN + "Batata frita da cintia - R$ 14.00" + Cores.TEXT_RESET);
 			do {
-				System.out.print(Cores.TEXT_YELLOW + "\tQuantidade? " + Cores.TEXT_RESET);
+				System.out.print(Cores.TEXT_YELLOW + "\t\tQuantidade? " + Cores.TEXT_RESET);
 				while (!ler.hasNextInt()) {
-					System.out.print(Cores.TEXT_RED + "\tOpcao invalida, digite apenas numero: " + Cores.TEXT_RESET);
+					System.out.print(Cores.TEXT_RED + "\t\tOpcao invalida, digite apenas numero: " + Cores.TEXT_RESET);
 					ler.next();
 				}
 				quantidade = ler.nextInt();
 				if (quantidade <= 0) {
-					System.out.println(Cores.TEXT_RED + "\tMinimo 1 item" + Cores.TEXT_RESET);
+					System.out.println(Cores.TEXT_RED + "\t\tMinimo 1 item" + Cores.TEXT_RESET);
 				}
 			} while (quantidade <= 0);
 			produto = new Produto("Batata frita da Cintia", 14.00);
@@ -258,16 +258,16 @@ public class UI {
 			}
 			break;
 		case "b1":
-			System.out.println(Cores.TEXT_YELLOW + "\tItem selecionado: " + Cores.TEXT_RESET + Cores.TEXT_CYAN + "Refrigerante - R$ 10.00" + Cores.TEXT_RESET);
+			System.out.println(Cores.TEXT_YELLOW + "\t\tItem selecionado: " + Cores.TEXT_RESET + Cores.TEXT_CYAN + "Refrigerante - R$ 10.00" + Cores.TEXT_RESET);
 			do {
-				System.out.print(Cores.TEXT_YELLOW + "\tQuantidade? " + Cores.TEXT_RESET);
+				System.out.print(Cores.TEXT_YELLOW + "\t\tQuantidade? " + Cores.TEXT_RESET);
 				while (!ler.hasNextInt()) {
-					System.out.print(Cores.TEXT_RED + "\tOpcao invalida, digite apenas numero: " + Cores.TEXT_RESET);
+					System.out.print(Cores.TEXT_RED + "\t\tOpcao invalida, digite apenas numero: " + Cores.TEXT_RESET);
 					ler.next();
 				}
 				quantidade = ler.nextInt();
 				if (quantidade <= 0) {
-					System.out.println(Cores.TEXT_RED + "\tMinimo 1 item" + Cores.TEXT_RESET);
+					System.out.println(Cores.TEXT_RED + "\t\tMinimo 1 item" + Cores.TEXT_RESET);
 				}
 			} while (quantidade <= 0);
 			produto = new Produto("Refrigerante", 10.00);
@@ -279,16 +279,16 @@ public class UI {
 			}
 			break;
 		case "b2":
-			System.out.println(Cores.TEXT_YELLOW + "\tItem selecionado: " + Cores.TEXT_RESET + Cores.TEXT_CYAN + "Suco natural - R$ 8.00" + Cores.TEXT_RESET);
+			System.out.println(Cores.TEXT_YELLOW + "\t\tItem selecionado: " + Cores.TEXT_RESET + Cores.TEXT_CYAN + "Suco natural - R$ 8.00" + Cores.TEXT_RESET);
 			do {
-				System.out.print(Cores.TEXT_YELLOW + "\tQuantidade? " + Cores.TEXT_RESET);
+				System.out.print(Cores.TEXT_YELLOW + "\t\tQuantidade? " + Cores.TEXT_RESET);
 				while (!ler.hasNextInt()) {
-					System.out.print(Cores.TEXT_RED + "\tOpcao invalida, digite apenas numero: " + Cores.TEXT_RESET);
+					System.out.print(Cores.TEXT_RED + "\t\tOpcao invalida, digite apenas numero: " + Cores.TEXT_RESET);
 					ler.next();
 				}
 				quantidade = ler.nextInt();
 				if (quantidade <= 0) {
-					System.out.println(Cores.TEXT_RED + "\tMinimo 1 item" + Cores.TEXT_RESET);
+					System.out.println(Cores.TEXT_RED + "\t\tMinimo 1 item" + Cores.TEXT_RESET);
 				}
 			} while (quantidade <= 0);
 			produto = new Produto("Suco natural", 8.00);
@@ -300,16 +300,16 @@ public class UI {
 			}
 			break;
 		case "b3":
-			System.out.println(Cores.TEXT_YELLOW + "\tItem selecionado: " + Cores.TEXT_RESET + Cores.TEXT_CYAN + "Agua com gas - R$ 6.00" + Cores.TEXT_RESET);
+			System.out.println(Cores.TEXT_YELLOW + "\t\tItem selecionado: " + Cores.TEXT_RESET + Cores.TEXT_CYAN + "Agua com gas - R$ 6.00" + Cores.TEXT_RESET);
 			do {
-				System.out.print(Cores.TEXT_YELLOW + "\tQuantidade? " + Cores.TEXT_RESET);
+				System.out.print(Cores.TEXT_YELLOW + "\t\tQuantidade? " + Cores.TEXT_RESET);
 				while (!ler.hasNextInt()) {
-					System.out.print(Cores.TEXT_RED + "\tOpcao invalida, digite apenas numero: " + Cores.TEXT_RESET);
+					System.out.print(Cores.TEXT_RED + "\t\tOpcao invalida, digite apenas numero: " + Cores.TEXT_RESET);
 					ler.next();
 				}
 				quantidade = ler.nextInt();
 				if (quantidade <= 0) {
-					System.out.println(Cores.TEXT_RED + "\tMinimo 1 item" + Cores.TEXT_RESET);
+					System.out.println(Cores.TEXT_RED + "\t\tMinimo 1 item" + Cores.TEXT_RESET);
 				}
 			} while (quantidade <= 0);
 			produto = new Produto("Agua com gas", 6.00);
@@ -321,16 +321,16 @@ public class UI {
 			}
 			break;
 		case "b4":
-			System.out.println(Cores.TEXT_YELLOW + "\tItem selecionado: " + Cores.TEXT_RESET + Cores.TEXT_CYAN + "Agua sem gas - R$ 4.00" + Cores.TEXT_RESET);
+			System.out.println(Cores.TEXT_YELLOW + "\t\tItem selecionado: " + Cores.TEXT_RESET + Cores.TEXT_CYAN + "Agua sem gas - R$ 4.00" + Cores.TEXT_RESET);
 			do {
-				System.out.print(Cores.TEXT_YELLOW + "\tQuantidade? " + Cores.TEXT_RESET);
+				System.out.print(Cores.TEXT_YELLOW + "\t\tQuantidade? " + Cores.TEXT_RESET);
 				while (!ler.hasNextInt()) {
-					System.out.print(Cores.TEXT_RED + "\tOpcao invalida, digite apenas numero: " + Cores.TEXT_RESET);
+					System.out.print(Cores.TEXT_RED + "\t\tOpcao invalida, digite apenas numero: " + Cores.TEXT_RESET);
 					ler.next();
 				}
 				quantidade = ler.nextInt();
 				if (quantidade <= 0) {
-					System.out.println(Cores.TEXT_RED + "\tMinimo 1 item" + Cores.TEXT_RESET);
+					System.out.println(Cores.TEXT_RED + "\t\tMinimo 1 item" + Cores.TEXT_RESET);
 				}
 			} while (quantidade <= 0);
 			produto = new Produto("Agua sem gas", 4.00);
@@ -342,16 +342,16 @@ public class UI {
 			}
 			break;
 		case "s1":
-			System.out.println(Cores.TEXT_YELLOW + "\tItem selecionado: " + Cores.TEXT_RESET + Cores.TEXT_CYAN + "Pudim - R$ 10.00" + Cores.TEXT_RESET);
+			System.out.println(Cores.TEXT_YELLOW + "\t\tItem selecionado: " + Cores.TEXT_RESET + Cores.TEXT_CYAN + "Pudim - R$ 10.00" + Cores.TEXT_RESET);
 			do {
-				System.out.print(Cores.TEXT_YELLOW + "\tQuantidade? " + Cores.TEXT_RESET);
+				System.out.print(Cores.TEXT_YELLOW + "\t\tQuantidade? " + Cores.TEXT_RESET);
 				while (!ler.hasNextInt()) {
-					System.out.print(Cores.TEXT_RED + "\tOpcao invalida, digite apenas numero: " + Cores.TEXT_RESET);
+					System.out.print(Cores.TEXT_RED + "\t\tOpcao invalida, digite apenas numero: " + Cores.TEXT_RESET);
 					ler.next();
 				}
 				quantidade = ler.nextInt();
 				if (quantidade <= 0) {
-					System.out.println(Cores.TEXT_RED + "\tMinimo 1 item" + Cores.TEXT_RESET);
+					System.out.println(Cores.TEXT_RED + "\t\tMinimo 1 item" + Cores.TEXT_RESET);
 				}
 			} while (quantidade <= 0);
 			produto = new Produto("Pudim", 15.00);
@@ -363,16 +363,16 @@ public class UI {
 			}
 			break;
 		case "s2":
-			System.out.println(Cores.TEXT_YELLOW + "\tItem selecionado: " + Cores.TEXT_RESET + Cores.TEXT_CYAN + "Pedaco de bolo - R$ 15.00" + Cores.TEXT_RESET);
+			System.out.println(Cores.TEXT_YELLOW + "\t\tItem selecionado: " + Cores.TEXT_RESET + Cores.TEXT_CYAN + "Pedaco de bolo - R$ 15.00" + Cores.TEXT_RESET);
 			do {
-				System.out.print(Cores.TEXT_YELLOW + "\tQuantidade? " + Cores.TEXT_RESET);
+				System.out.print(Cores.TEXT_YELLOW + "\t\tQuantidade? " + Cores.TEXT_RESET);
 				while (!ler.hasNextInt()) {
-					System.out.print(Cores.TEXT_RED + "\tOpcao invalida, digite apenas numero: " + Cores.TEXT_RESET);
+					System.out.print(Cores.TEXT_RED + "\t\tOpcao invalida, digite apenas numero: " + Cores.TEXT_RESET);
 					ler.next();
 				}
 				quantidade = ler.nextInt();
 				if (quantidade <= 0) {
-					System.out.println(Cores.TEXT_RED + "\tMinimo 1 item" + Cores.TEXT_RESET);
+					System.out.println(Cores.TEXT_RED + "\t\tMinimo 1 item" + Cores.TEXT_RESET);
 				}
 			} while (quantidade <= 0);
 			produto = new Produto("Pedaco de bolo", 10.00);
@@ -384,16 +384,16 @@ public class UI {
 			}
 			break;
 		case "s3":
-			System.out.println(Cores.TEXT_YELLOW + "\tItem selecionado: " + Cores.TEXT_RESET + Cores.TEXT_CYAN + "Sorvete - R$ 20.00" + Cores.TEXT_RESET);
+			System.out.println(Cores.TEXT_YELLOW + "\t\tItem selecionado: " + Cores.TEXT_RESET + Cores.TEXT_CYAN + "Sorvete - R$ 20.00" + Cores.TEXT_RESET);
 			do {
-				System.out.print(Cores.TEXT_YELLOW + "\tQuantidade? " + Cores.TEXT_RESET);
+				System.out.print(Cores.TEXT_YELLOW + "\t\tQuantidade? " + Cores.TEXT_RESET);
 				while (!ler.hasNextInt()) {
-					System.out.print(Cores.TEXT_RED + "\tOpcao invalida, digite apenas numero: " + Cores.TEXT_RESET);
+					System.out.print(Cores.TEXT_RED + "\t\tOpcao invalida, digite apenas numero: " + Cores.TEXT_RESET);
 					ler.next();
 				}
 				quantidade = ler.nextInt();
 				if (quantidade <= 0) {
-					System.out.println(Cores.TEXT_RED + "\tMinimo 1 item" + Cores.TEXT_RESET);
+					System.out.println(Cores.TEXT_RED + "\t\tMinimo 1 item" + Cores.TEXT_RESET);
 				}
 			} while (quantidade <= 0);
 			produto = new Produto("Sorvete", 20.00);
@@ -412,7 +412,7 @@ public class UI {
 	}
 
 	public static boolean validaResposta(Scanner ler) {
-		System.out.print(Cores.TEXT_YELLOW + "\tAdicionar mais itens ao pedido? " + Cores.TEXT_RESET + Cores.TEXT_WHITE + "(n/s): " + Cores.TEXT_RESET);
+		System.out.print(Cores.TEXT_YELLOW + "\t\tAdicionar mais itens ao pedido? " + Cores.TEXT_RESET + Cores.TEXT_WHITE + "(n/s): " + Cores.TEXT_RESET);
 		char resposta = ler.next().toLowerCase().charAt(0);
 		while (resposta != 'n' && resposta != 's') {
 			System.out.print(Cores.TEXT_RED + "\tDigite 's' para Sim ou 'n' para nao: " + Cores.TEXT_RESET);
@@ -427,7 +427,7 @@ public class UI {
 	
 	public static boolean validaRespostaEntregador(char resposta, Scanner ler) {
 		while (resposta != 'n' && resposta != 's') {
-			System.out.print(Cores.TEXT_RED + "\tDigite 's' para Sim ou 'n' para nao: " + Cores.TEXT_RESET);
+			System.out.print(Cores.TEXT_RED + "\t\tDigite 's' para Sim ou 'n' para nao: " + Cores.TEXT_RESET);
 			resposta = ler.next().toLowerCase().charAt(0);;
 		}
 		if (resposta == 'n') {
@@ -470,11 +470,11 @@ public class UI {
 		System.out.println("\tS1 - " + Cores.TEXT_CYAN + "Digite S1 para Pudim........................" + Cores.TEXT_RESET + "R$ 10.00");
 		System.out.println("\tS2 - " + Cores.TEXT_CYAN + "Digite S2 para Pedaco de Bolo..............." + Cores.TEXT_RESET + "R$ 15.00");
 		System.out.println("\tS3 - " + Cores.TEXT_CYAN + "Digite S3 para Sorvete......................" + Cores.TEXT_RESET + "R$ 20.00\n");
-		System.out.print(Cores.TEXT_YELLOW + "\tEscolha um: " + Cores.TEXT_RESET);
+		System.out.print(Cores.TEXT_YELLOW + "\t\tEscolha um: " + Cores.TEXT_RESET);
 		String resposta = ler.nextLine().toLowerCase();
 		while(validaOpcaoMenu(resposta) == false) {
 			System.out.println();
-			System.out.print(Cores.TEXT_RED + "\tOpcao invalida! " + Cores.TEXT_RESET + Cores.TEXT_YELLOW + "\n\tPor favor, selecione corretamente um item do menu: "+ Cores.TEXT_RESET);
+			System.out.print(Cores.TEXT_RED + "\t\tOpcao invalida! " + Cores.TEXT_RESET + Cores.TEXT_YELLOW + "\n\tPor favor, selecione corretamente um item do menu: "+ Cores.TEXT_RESET);
 			resposta = ler.nextLine().toLowerCase();
 		}
 		return resposta;
@@ -499,7 +499,7 @@ public class UI {
 		Entregador e = entregadores.stream().filter(x -> x.getNome().equals(nome)).findFirst().orElse(null);
 		
 		if(e.getPedidoEmEntrega() != null) {
-			System.out.print(Cores.TEXT_YELLOW + "\t" + e.getNome() + " voce ja finalizou a entrega do(a) cliente " + e.getPedidoEmEntrega().getCliente().getNome() + " ?: " + Cores.TEXT_RESET);
+			System.out.print(Cores.TEXT_YELLOW + "\t\t" + e.getNome() + " voce ja finalizou a entrega do(a) cliente " + e.getPedidoEmEntrega().getCliente().getNome() + " ?: " + Cores.TEXT_RESET);
 			char resposta = ler.next().toLowerCase().charAt(0);
 			if (UI.validaRespostaEntregador(resposta, ler) == false) {
 				System.out.println(Cores.TEXT_YELLOW + "\n\tPor favor, finalize o pedido do(a) cliente " + e.getPedidoEmEntrega().getCliente().getNome() + Cores.TEXT_RESET);

@@ -1,8 +1,6 @@
 package aplicacao;
 
-import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
@@ -92,15 +90,15 @@ public class Programa {
 				if(pedidos.isEmpty()) {
 					System.out.println(Cores.TEXT_YELLOW + "\n\tNao ha pedidos para entregar" + Cores.TEXT_RESET);
 				}else {
-					System.out.print(Cores.TEXT_YELLOW + "\tDigite seu nome: " + Cores.TEXT_RESET);
+					System.out.print(Cores.TEXT_YELLOW + "\t\tDigite seu nome: " + Cores.TEXT_RESET);
 					String nome = ler.nextLine();
-					System.out.print(Cores.TEXT_YELLOW + "\tDigite sua senha: " + Cores.TEXT_RESET);
+					System.out.print(Cores.TEXT_YELLOW + "\t\tDigite sua senha: " + Cores.TEXT_RESET);
 					String senha = ler.nextLine();
 					while(UI.loginEntregador(nome, senha, entregadores) == false) {
-						System.out.println(Cores.TEXT_RED + "\tEntregador nao encontrado! Digite novamente: " + Cores.TEXT_RESET);
-						System.out.print(Cores.TEXT_YELLOW + "\tNome: " + Cores.TEXT_RESET);
+						System.out.println(Cores.TEXT_RED + "\t\tEntregador nao encontrado! Digite novamente: " + Cores.TEXT_RESET);
+						System.out.print(Cores.TEXT_YELLOW + "\t\tNome: " + Cores.TEXT_RESET);
 						nome = ler.nextLine();
-						System.out.print(Cores.TEXT_YELLOW + "\tSenha: " + Cores.TEXT_RESET);
+						System.out.print(Cores.TEXT_YELLOW + "\t\tSenha: " + Cores.TEXT_RESET);
 						senha = ler.nextLine();
 					}
 					UI.verificaPedidos(nome, entregadores, pedidos, pedidosEmEnvio, pedidosEntregues, empresas);
