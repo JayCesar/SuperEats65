@@ -119,7 +119,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ### ▶️ Breve demonstração
 
-Espaço para o gif / video
+[demo:](https://github.com/JayCesar/SuperEats65/assets/44206400/1ab3a3ba-d5e8-4469-b987-b0ccac889b08)
 
 ***
 
