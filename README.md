@@ -26,6 +26,10 @@
 
 ***
 
+⚠️**Obs:** O sistema foi desenvolvido exclusivamente para ser executado em terminal, por conta disso, pode ser que haja diferenças de 'espaços' de acordo com sistema que executar ele!
+
+***
+
 ### 📙 Regra de Negócio do Sistema
 
 A Plataforma é direcionada inicialmente para pequenas empresas do ramo alimentício e posteriormente para vários segmentos do comércio.
@@ -83,18 +87,34 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 1) Dê um fork nesse repositório e se você puder nos dê uma estrelinha! ⭐
 
-![image](https://github.com/JayCesar/SuperEats65/assets/44206400/02d6c829-a355-4978-91e5-3af754117327)
+      <div align="left"><img src="https://github.com/JayCesar/SuperEats65/assets/44206400/02d6c829-a355-4978-91e5-3af754117327" title="source: imgur.com" /></div>
 
-Certifique de que você já tenha instalado em sua máquina as seguintes ferramentas:
-- [x] Linguagem para executar o sistema: **[Java](https://www.java.com/pt-BR/)**
-- [x] Sistema para controle de versões e execução do programa: **[Git](https://git-scm.com)**
-- [x] IDE (Ambiente de desenvolvimento) para edição: **[STS](https://spring.io/tools)**
+     Certifique-se de que você já tenha instalado em sua máquina as seguintes ferramentas:
+     - [x] Linguagem para executar o sistema: **[Java](https://www.java.com/pt-BR/)**
+     - [x] Sistema para controle de versões e execução do programa: **[Git](https://git-scm.com)**
+     - [x] IDE (Ambiente de desenvolvimento) para edição: **[STS](https://spring.io/tools)**
 
 2) Após baixar este repositório, acesse pasta 'src' e execute o seguinte comando:
-```java
-java aplicacao/Programa
-```
+    ```java
+    java aplicacao/Programa
+    ```
 
+3) Caso não funcione, você pode acessar o sistema no seguinte link: https://replit.com/@JayCesar/SuperEats65?v=1
+   
+5) Você pode também executar o sistema dentro da IDE - STS. Para isso, após baixar a feramenta, basta seguir os seguintes passos: 
+
+   4.1) Importar o projeto;
+   <div align="left"><img src="https://github.com/JayCesar/SuperEats65/assets/44206400/d5902c8d-6be2-4186-b8a2-007d28a862da" title="source: imgur.com" /></div>
+   
+   4.2) Escolha a opção de projeto existe:
+   <div align="left"><img src="https://github.com/JayCesar/SuperEats65/assets/44206400/a55066a6-3e98-42c5-9fb8-304425cf3fd5" title="source: imgur.com" /></div>  
+   
+   4.4) Selecione a pasta do projeto;
+   <div align="left"><img src="https://github.com/JayCesar/SuperEats65/assets/44206400/0b7ceeb4-7942-4abd-a62e-856b1eaede75" title="source: imgur.com" /></div>  
+   
+   4.4) Executar o programa;
+   <div align="left"><img src="https://github.com/JayCesar/SuperEats65/assets/44206400/7d9efe75-6510-4e30-9382-9c8c1b0b3f2d" title="source: imgur.com" /></div>  
+	
 ***
 
 ### ▶️ Breve demonstração
